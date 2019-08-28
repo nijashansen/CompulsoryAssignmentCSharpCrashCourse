@@ -1,0 +1,12 @@
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\Core\bin\Debug\netcoreapp2.1\Core.deps.json
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\Core\bin\Debug\netcoreapp2.1\Core.dll
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\Core\bin\Debug\netcoreapp2.1\Core.pdb
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\Core\bin\Debug\netcoreapp2.1\Core.Entity.dll
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\Core\bin\Debug\netcoreapp2.1\Core.Entity.pdb
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\Core\obj\Debug\netcoreapp2.1\Core.csprojAssemblyReference.cache
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\Core\obj\Debug\netcoreapp2.1\Core.csproj.CoreCompileInputs.cache
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\Core\obj\Debug\netcoreapp2.1\Core.AssemblyInfoInputs.cache
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\Core\obj\Debug\netcoreapp2.1\Core.AssemblyInfo.cs
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\Core\obj\Debug\netcoreapp2.1\Core.csproj.CopyComplete
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\Core\obj\Debug\netcoreapp2.1\Core.dll
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\Core\obj\Debug\netcoreapp2.1\Core.pdb

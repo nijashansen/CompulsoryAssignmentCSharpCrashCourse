@@ -1,0 +1,175 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Infrastructure.Data\\Infrastructure.Data.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core.Entity\\Core.Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core.Entity\\Core.Entity.csproj",
+        "projectName": "Core.Entity",
+        "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core.Entity\\Core.Entity.csproj",
+        "packagesPath": "C:\\Users\\Nijas Hansen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core.Entity\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Nijas Hansen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core\\Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core\\Core.csproj",
+        "projectName": "Core",
+        "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\Nijas Hansen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Nijas Hansen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core.Entity\\Core.Entity.csproj": {
+                "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core.Entity\\Core.Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Infrastructure.Data\\Infrastructure.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Infrastructure.Data\\Infrastructure.Data.csproj",
+        "projectName": "Infrastructure.Data",
+        "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Infrastructure.Data\\Infrastructure.Data.csproj",
+        "packagesPath": "C:\\Users\\Nijas Hansen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Infrastructure.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Nijas Hansen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core.Entity\\Core.Entity.csproj": {
+                "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core.Entity\\Core.Entity.csproj"
+              },
+              "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core\\Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
