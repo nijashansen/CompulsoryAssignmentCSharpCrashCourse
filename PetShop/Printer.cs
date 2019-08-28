@@ -24,6 +24,7 @@ namespace ConsoleApp
             "Delete A Pet",
             "Edit A Pet",
             "Show Pets Ordered By Price",
+            "Search For a Type of Pet",
             "Exit"
         };
 
@@ -31,15 +32,18 @@ namespace ConsoleApp
         {
             var selection = ShowMenu(menuItems);
 
-            while (selection != 6)
+            while (selection != 7)
             {
                 switch (selection)
                 {
                     case 1:
+                        Console.Clear();
                         var pets = _petService.GetPets();
                         ListPets(pets);
+                        Console.ReadLine();
                         break;
                     case 2:
+                        Console.Clear();
                         var name = AskQuestion("Name: ");
                         var prevOwner = AskQuestion("Pevious Owner: ");
                         var Color = AskQuestion("Color: ");
@@ -50,13 +54,18 @@ namespace ConsoleApp
 
                         var pet = _petService.NewPet(name, prevOwner, Color, type, birthday, price, soldDate);
                         _petService.CreatePet(pet);
-
+                        Console.WriteLine("Press enter to continue...");
+                        Console.Clear();
                         break;
                     case 3:
+                        Console.Clear();
                         var idForDelete = PrintFindPetById();
                         _petService.Delete(idForDelete);
+                        Console.ReadLine();
+                        Console.Clear();
                         break;
                     case 4:
+                        Console.Clear();
                         var idForEdit = PrintFindPetById();
                         var petToEdit = _petService.FindPetById(idForEdit);
                         Console.WriteLine("Updating " + petToEdit.Name);
@@ -79,10 +88,23 @@ namespace ConsoleApp
                             Price = double.Parse(NewPrice),
                             SoldDate = DateTime.Parse(NewSoldDate)
                         });
+                        Console.WriteLine("Press enter to continue...");
+                        Console.Clear();
                         break;
                     case 5:
+                        Console.Clear();
                         pets = _petService.GetPetsOrderedByPrice();
                         ListPets(pets);
+                        Console.ReadLine();
+                        Console.Clear();
+                        break;
+                    case 6:
+                        Console.Clear();
+                        var typeOfPet = AskQuestion("Which Type Of Pet Are You Looking For: ");
+                        pets = _petService.GetPetsByType(typeOfPet);
+                        ListPets(pets);
+                        Console.ReadLine();
+                        Console.Clear();
                         break;
                     default:
                         break;
@@ -106,7 +128,7 @@ namespace ConsoleApp
             int selection;
             while (!int.TryParse(Console.ReadLine(), out selection)
                 || selection < 1
-                || selection > 5)
+                || selection > 7)
             {
                 Console.WriteLine("you ned to select a number between 1 - 5");
             }
