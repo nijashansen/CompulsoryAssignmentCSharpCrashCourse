@@ -23,6 +23,7 @@ namespace ConsoleApp
             "Add A Pet",
             "Delete A Pet",
             "Edit A Pet",
+            "Show Pets Ordered By Price",
             "Exit"
         };
 
@@ -30,7 +31,7 @@ namespace ConsoleApp
         {
             var selection = ShowMenu(menuItems);
 
-            while (selection != 5)
+            while (selection != 6)
             {
                 switch (selection)
                 {
@@ -78,6 +79,10 @@ namespace ConsoleApp
                             Price = double.Parse(NewPrice),
                             SoldDate = DateTime.Parse(NewSoldDate)
                         });
+                        break;
+                    case 5:
+                        pets = _petService.GetPetsOrderedByPrice();
+                        ListPets(pets);
                         break;
                     default:
                         break;

@@ -55,6 +55,14 @@ namespace Core.ApplicationServices.Impl
             return queryContinued.ToList();
         }
 
+        public List<Pet> GetPetsOrderedByPrice()
+        {
+            var list = _petRepo.ReadPets();
+
+            var orderedList = list.OrderBy(pet => pet.Price);
+            return orderedList.ToList();
+        }
+
         public Pet UpdatePet(Pet petUpdate)
         {
             var pet = FindPetById(petUpdate.ID);

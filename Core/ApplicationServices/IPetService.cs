@@ -21,6 +21,8 @@ namespace Core.ApplicationServices
 
         List<Pet> GetPetsByType(string type);
 
+        List<Pet> GetPetsOrderedByPrice();
+
         Pet Delete(int id);
 
 
