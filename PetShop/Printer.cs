@@ -45,7 +45,7 @@ namespace ConsoleApp
                         var type = AskQuestion("Type of Animal: ");
                         var birthday = AskQuestion("Birthday: (YYYY/MM/DD)");
                         var price = AskQuestion("Price: ");
-                        var soldDate = AskQuestion("Sold Date: ");
+                        var soldDate = AskQuestion("Sold Date: (YYYY/MM/DD)");
 
                         var pet = _petService.NewPet(name, prevOwner, Color, type, birthday, price, soldDate);
                         _petService.CreatePet(pet);
@@ -65,7 +65,7 @@ namespace ConsoleApp
                         var NewType = AskQuestion("Type of Animal: ");
                         var NewBirthday = AskQuestion("Birthday: (YYYY/MM/DD)");
                         var NewPrice = AskQuestion("Price: ");
-                        var NewSoldDate = AskQuestion("Sold Date: ");
+                        var NewSoldDate = AskQuestion("Sold Date: (YYYY/MM/DD)");
 
                         _petService.UpdatePet(new Pet()
                         {
