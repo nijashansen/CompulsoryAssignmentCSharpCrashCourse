@@ -43,7 +43,7 @@ namespace ConsoleApp
                         var prevOwner = AskQuestion("Pevious Owner: ");
                         var Color = AskQuestion("Color: ");
                         var type = AskQuestion("Type of Animal: ");
-                        var birthday = AskQuestion("Birthday: ");
+                        var birthday = AskQuestion("Birthday: (YYYY/MM/DD)");
                         var price = AskQuestion("Price: ");
                         var soldDate = AskQuestion("Sold Date: ");
 
@@ -84,7 +84,7 @@ namespace ConsoleApp
                 }
                 selection = ShowMenu(menuItems);
             }
-            Console.WriteLine("bye Pets");
+            Console.WriteLine("Have A Nice Day :P");
 
             Console.ReadLine();
         }
