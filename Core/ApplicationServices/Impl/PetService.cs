@@ -51,8 +51,16 @@ namespace Core.ApplicationServices.Impl
         {
             var list = _petRepo.ReadPets();
 
-            var queryContinued = list.Where(pet => pet.TypeOfPet.Equals(type));
-            return queryContinued.ToList();
+            var sortedList = list.Where(pet => pet.TypeOfPet.Equals(type));
+            return sortedList.ToList();
+        }
+
+        public List<Pet> Get5CheapestPets()
+        {
+            var list = GetPetsOrderedByPrice();
+
+            var sortedList = list.OrderBy(pet => pet.Price).Take(5);
+            return sortedList.ToList();
         }
 
         public List<Pet> GetPetsOrderedByPrice()

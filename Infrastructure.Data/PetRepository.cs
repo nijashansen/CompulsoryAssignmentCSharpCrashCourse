@@ -10,11 +10,10 @@ namespace Infrastructure.Data
     public class PetRepository : IPetRepository
     {
         private List<Pet> _pets = FakeDB.getPets();
-        static int id = 1;
 
         public Pet CreatePet(Pet pet)
         {
-            pet.ID = id++;
+            pet.ID = FakeDB.id++;
             _pets.Add(pet);
             return pet;
         }

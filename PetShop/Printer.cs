@@ -25,6 +25,7 @@ namespace ConsoleApp
             "Edit A Pet",
             "Show Pets Ordered By Price",
             "Search For a Type of Pet",
+            "Show the 5 Cheapest Pets",
             "Exit"
         };
 
@@ -32,7 +33,7 @@ namespace ConsoleApp
         {
             var selection = ShowMenu(menuItems);
 
-            while (selection != 7)
+            while (selection != 8)
             {
                 switch (selection)
                 {
@@ -106,6 +107,13 @@ namespace ConsoleApp
                         Console.ReadLine();
                         Console.Clear();
                         break;
+                    case 7:
+                        Console.Clear();
+                        pets = _petService.Get5CheapestPets();
+                        ListPets(pets);
+                        Console.ReadLine();
+                        Console.Clear();
+                        break;
                     default:
                         break;
                 }
@@ -128,9 +136,9 @@ namespace ConsoleApp
             int selection;
             while (!int.TryParse(Console.ReadLine(), out selection)
                 || selection < 1
-                || selection > 7)
+                || selection > 9)
             {
-                Console.WriteLine("you ned to select a number between 1 - 5");
+                Console.WriteLine("you ned to select a number between 1 - 8");
             }
 
 
@@ -143,13 +151,13 @@ namespace ConsoleApp
             foreach (var pet in pets)
             {
                 Console.WriteLine("ID: " + pet.ID +
-                    ", Name: " + pet.Name +
-                    ", Color: " + pet.Color +
-                    ", Type: " + pet.TypeOfPet +
-                    ", Price: " + pet.Price +
-                    ", Previous Owner: " + pet.PrevOwner +
-                    ", Birthday: " + pet.BirthDay +
-                    ", Sold Date: " + pet.SoldDate);
+                    ", \nName: " + pet.Name +
+                    ", \nColor: " + pet.Color +
+                    ", \nType: " + pet.TypeOfPet +
+                    ", \nPrice: " + pet.Price +
+                    ", \nPrevious Owner: " + pet.PrevOwner +
+                    ", \nBirthday: " + pet.BirthDay +
+                    ", \nSold Date: " + pet.SoldDate + "\n");
             }
             Console.WriteLine("\n");
         }

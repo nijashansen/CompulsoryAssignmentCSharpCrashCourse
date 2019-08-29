@@ -9,8 +9,8 @@ namespace Infrastructure.Data
     public static class FakeDB
     {
 
-        private static IEnumerable<Pet> _pets = new List<Pet>();
-        private static int id = 1;
+        private static List<Pet> _pets = new List<Pet>();
+        internal static int id = 1;
 
         public static List<Pet> getPets()
         {
@@ -55,7 +55,10 @@ namespace Infrastructure.Data
                 SoldDate = new DateTime(2006, 12, 30)
             };
 
-            _pets.ToList().Add(Cat);
+            _pets.Add(Cat);
+            _pets.Add(Dog);
+            _pets.Add(Goat);
+            
         }
 
 
