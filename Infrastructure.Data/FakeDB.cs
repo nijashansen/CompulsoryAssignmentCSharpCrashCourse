@@ -19,6 +19,18 @@ namespace Infrastructure.Data
 
         public static void InitData()
         {
+            Pet Goat2 = new Pet()
+            {
+                ID = id++,
+                Name = "Børge",
+                BirthDay = new DateTime(1997, 2, 5),
+                Color = "Gray",
+                PrevOwner = "Mette",
+                Price = 300000,
+                TypeOfPet = "Goat",
+                SoldDate = new DateTime(2006, 1, 1)
+            };
+
             Pet Goat = new Pet()
             {
                 ID = id++,
@@ -31,6 +43,18 @@ namespace Infrastructure.Data
                 SoldDate = new DateTime(2006, 1 ,1)
             };
 
+            Pet Dog2 = new Pet()
+            {
+                ID = id++,
+                Name = "Marie",
+                BirthDay = new DateTime(1997, 2, 5),
+                Color = "Blue",
+                PrevOwner = "Astrid",
+                Price = 102000,
+                TypeOfPet = "Dog",
+                SoldDate = new DateTime(2006, 1, 1)
+            };
+
             Pet Dog = new Pet()
             {
                 ID = id++,
@@ -39,7 +63,7 @@ namespace Infrastructure.Data
                 Color = "Golden",
                 PrevOwner = "Rasmus",
                 Price = 2500,
-                TypeOfPet = "Doggo",
+                TypeOfPet = "Dog",
                 SoldDate = new DateTime(2001, 10, 3)
             };
 
@@ -51,13 +75,28 @@ namespace Infrastructure.Data
                 Color = "Orange",
                 PrevOwner = "Jon Arbuckle",
                 Price = 30000,
-                TypeOfPet = "Fat Cat",
+                TypeOfPet = "Cat",
                 SoldDate = new DateTime(2006, 12, 30)
+            };
+
+            Pet Cat2 = new Pet()
+            {
+                ID = id++,
+                Name = "Felix",
+                BirthDay = new DateTime(1997, 2, 5),
+                Color = "Black",
+                PrevOwner = "Karina",
+                Price = 19000,
+                TypeOfPet = "Cat",
+                SoldDate = new DateTime(2006, 1, 1)
             };
 
             _pets.Add(Cat);
             _pets.Add(Dog);
             _pets.Add(Goat);
+            _pets.Add(Goat2);
+            _pets.Add(Dog2);
+            _pets.Add(Cat2);
             
         }
 
