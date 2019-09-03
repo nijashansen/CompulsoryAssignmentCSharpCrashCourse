@@ -35,17 +35,22 @@ namespace PetShop.UI.restAPI.Controllers
         }
 
         // GET api/pets/5
-        //[HttpGet("{id}")]
-        //public ActionResult<string> Get(int id)
-        //{
-        //    return _petService.FindPetById(id);
-        //}
+        [HttpGet("{id}")]
+        public ActionResult<Pet> Get(int id)
+        {
+            return _petService.FindPetById(id);
+        }
 
         // POST api/pets
         [HttpPost]
-        public void Post([FromBody] Pet pet)
+        public ActionResult<Pet> Post([FromBody] Pet pet)
         {
-            _petService.CreatePet(pet);
+            if (string.IsNullOrEmpty(pet.Name))
+            {
+                return BadRequest("Name is Required to create a Pet");
+            }
+
+            return _petService.CreatePet(pet);
         }
 
         //whup
@@ -53,16 +58,26 @@ namespace PetShop.UI.restAPI.Controllers
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Pet pet)
+        public ActionResult<Pet> Put(int id, [FromBody] Pet pet)
         {
-            _petService.UpdatePet(pet);
+            if (id < 1 || id != pet.ID)
+            {
+                return BadRequest("Parameter id, and pet id must be the same!");
+            }
+            return Ok(_petService.UpdatePet(pet));
         }
 
         // DELETE api/pets/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult<Pet> Delete(int id)
         {
-            _petService.Delete(id);
+            var pet = _petService.Delete(id);
+            if (pet == null)
+            {
+                return StatusCode(404, "Could not find pet with id: " + id);
+            }
+
+            return Ok("Pet with id: " + id + ", Was deleted");
         }
 
     }
