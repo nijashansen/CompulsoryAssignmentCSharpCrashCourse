@@ -801,9 +801,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\PetShop\\ConsoleApp.csproj",
-      "projectName": "ConsoleApp",
-      "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\PetShop\\ConsoleApp.csproj",
+      "projectUniqueName": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\PetShop\\ConsoleApp2017.csproj",
+      "projectName": "ConsoleApp2017",
+      "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\PetShop\\ConsoleApp2017.csproj",
       "packagesPath": "C:\\Users\\Nijas Hansen\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\PetShop\\obj\\",
       "projectStyle": "PackageReference",

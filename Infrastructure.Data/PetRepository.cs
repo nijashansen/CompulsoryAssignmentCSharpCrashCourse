@@ -9,7 +9,7 @@ namespace Infrastructure.Data
 {
     public class PetRepository : IPetRepository
     {
-        private List<Pet> _pets = FakeDB.getPets();
+        private static readonly List<Pet> _pets = FakeDB.getPets();
 
         public Pet CreatePet(Pet pet)
         {
