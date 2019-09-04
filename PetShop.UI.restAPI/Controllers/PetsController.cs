@@ -71,12 +71,13 @@ namespace PetShop.UI.restAPI.Controllers
         [HttpDelete("{id}")]
         public ActionResult<Pet> Delete(int id)
         {
-            var pet = _petService.Delete(id);
+            var pet = _petService.FindPetById(id);
             if (pet == null)
             {
                 return StatusCode(404, "Could not find pet with id: " + id);
             }
 
+            _petService.Delete(id);
             return Ok("Pet with id: " + id + ", Was deleted");
         }
 

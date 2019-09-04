@@ -46,7 +46,10 @@ namespace ConsoleApp
                     case 2:
                         Console.Clear();
                         var name = AskQuestion("Name: ");
-                        var prevOwner = AskQuestion("Pevious Owner: ");
+                        var prevOwner = new Owner
+                        {
+                            name = AskQuestion("Previous Owners Name: ")
+                        };
                         var Color = AskQuestion("Color: ");
                         var type = AskQuestion("Type of Animal: ");
                         var birthday = AskQuestion("Birthday: (YYYY/MM/DD)");
@@ -71,7 +74,10 @@ namespace ConsoleApp
                         var petToEdit = _petService.FindPetById(idForEdit);
                         Console.WriteLine("Updating " + petToEdit.Name);
                         var newName = AskQuestion("Name: ");
-                        var NewPrevOwner = AskQuestion("Pevious Owner: ");
+                        var NewPrevOwner = new Owner
+                        {
+                            name = AskQuestion("New Owners Name: ")
+                        };
                         var NewColor = AskQuestion("Color: ");
                         var NewType = AskQuestion("Type of Animal: ");
                         var NewBirthday = AskQuestion("Birthday: (YYYY/MM/DD)");
@@ -155,7 +161,7 @@ namespace ConsoleApp
                     ", \nColor: " + pet.Color +
                     ", \nType: " + pet.TypeOfPet +
                     ", \nPrice: " + pet.Price +
-                    ", \nPrevious Owner: " + pet.PrevOwner +
+                    ", \nPrevious Owner: " + pet.PrevOwner.name + ", Id: " + pet.PrevOwner.id +
                     ", \nBirthday: " + pet.BirthDay +
                     ", \nSold Date: " + pet.SoldDate + "\n");
             }

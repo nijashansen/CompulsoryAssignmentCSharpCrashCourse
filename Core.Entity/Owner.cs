@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Core.Entity
 {
-    class Owner
+    public class Owner
     {
 
         public int id { get; set; }

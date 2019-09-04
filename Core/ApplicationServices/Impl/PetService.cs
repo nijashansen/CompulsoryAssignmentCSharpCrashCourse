@@ -16,7 +16,7 @@ namespace Core.ApplicationServices.Impl
             _petRepo = petRepository;
         }
 
-        public Pet NewPet(string name, string prevOwner, string Color, string type, string birthday, string price, string soldDate)
+        public Pet NewPet(string name, Owner prevOwner, string Color, string type, string birthday, string price, string soldDate)
         {
             var pet = new Pet()
             {
@@ -89,5 +89,6 @@ namespace Core.ApplicationServices.Impl
         {
             return _petRepo.Delete(id);
         }
+
     }
 }

@@ -7,8 +7,7 @@ namespace Core.ApplicationServices
 {
     public interface IPetService
     {
-        Pet NewPet(string name, string prevOwner, string Color, string type, string birthday, string price, string soldDate);
-
+        Pet NewPet(string name, Owner prevOwner, string Color, string type, string birthday, string price, string soldDate);
 
 
         Pet CreatePet(Pet pet);
@@ -26,7 +25,6 @@ namespace Core.ApplicationServices
         List<Pet> GetPetsOrderedByPrice();
 
         Pet Delete(int id);
-
-
+        
     }
 }

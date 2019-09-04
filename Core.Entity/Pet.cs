@@ -18,9 +18,11 @@ namespace Core.Entity
 
         public string Color { get; set; }
 
-        public string PrevOwner { get; set; }
+        public Owner PrevOwner { get; set; }
 
         public double Price { get; set; }
+
+
 
     }
 }

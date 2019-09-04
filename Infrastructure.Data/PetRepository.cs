@@ -13,7 +13,8 @@ namespace Infrastructure.Data
 
         public Pet CreatePet(Pet pet)
         {
-            pet.ID = FakeDB.id++;
+            pet.ID = FakeDB.petID++;
+            pet.PrevOwner.id = FakeDB.ownerID++;
             _pets.Add(pet);
             return pet;
         }
@@ -52,6 +53,7 @@ namespace Infrastructure.Data
             {
                 petFromDB.Name = petToBeUpdated.Name;
                 petFromDB.PrevOwner = petToBeUpdated.PrevOwner;
+                petFromDB.PrevOwner.id = petToBeUpdated.PrevOwner.id;
                 petFromDB.Color = petToBeUpdated.Color;
                 petFromDB.BirthDay = petToBeUpdated.BirthDay;
                 petFromDB.Price = petToBeUpdated.Price;
