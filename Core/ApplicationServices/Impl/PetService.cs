@@ -85,6 +85,13 @@ namespace Core.ApplicationServices.Impl
             return pet;
         }
 
+        public Owner getOwner(Pet pet)
+        {
+            var pettie = FindPetById(pet.ID);
+
+            return pettie.PrevOwner;
+        }
+
         public Pet Delete(int id)
         {
             return _petRepo.Delete(id);

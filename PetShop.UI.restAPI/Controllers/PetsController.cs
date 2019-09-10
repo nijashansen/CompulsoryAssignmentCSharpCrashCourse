@@ -28,9 +28,9 @@ namespace PetShop.UI.restAPI.Controllers
             {
                 return _petService.GetPets();
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new Exception();
+                return BadRequest("Couldt get any pets");
             }       
         }
 
@@ -38,7 +38,13 @@ namespace PetShop.UI.restAPI.Controllers
         [HttpGet("{id}")]
         public ActionResult<Pet> Get(int id)
         {
-            return _petService.FindPetById(id);
+            var pet = _petService.FindPetById(id);
+            if (pet == null || id <= 0)
+            {
+                return StatusCode(406, "Pet with id: " + id + ", Was not found.");
+            }
+            return pet;
+            
         }
 
         // POST api/pets
@@ -49,6 +55,11 @@ namespace PetShop.UI.restAPI.Controllers
             {
                 return BadRequest("Name is Required to create a Pet");
             }
+            else if (pet.PrevOwner == null)
+            {
+                return BadRequest("Previous Owner is Required to create a Pet");
+            }
+
 
             return _petService.CreatePet(pet);
         }
@@ -63,6 +74,14 @@ namespace PetShop.UI.restAPI.Controllers
             if (id < 1 || id != pet.ID)
             {
                 return BadRequest("Parameter id, and pet id must be the same!");
+            }
+            else if (pet.PrevOwner == null)
+            {
+                return BadRequest("Please enter an owner with an id");
+            }
+            else if (pet.PrevOwner.id != _petService.getOwner(pet).id)
+            {
+                return BadRequest("Previous Owner Parameter id, and Previous owner id, must be the same");
             }
             return Ok(_petService.UpdatePet(pet));
         }

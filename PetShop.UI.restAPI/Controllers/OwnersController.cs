@@ -30,7 +30,7 @@ namespace PetShop.UI.restAPI.Controllers
             }
             catch (Exception)
             {
-                throw new Exception();
+                return BadRequest("No Owners Was Found");
             }
         }
 
@@ -38,6 +38,12 @@ namespace PetShop.UI.restAPI.Controllers
         [HttpGet("{id}")]
         public ActionResult<Owner> Get(int id)
         {
+            var owner = _ownerService.FindOwnerById(id);
+            if (id <= 0 || owner == null)
+            {
+                return BadRequest("ID: " + id + ", does not exist\n" +
+                    "Please enter a valid id");
+            }
             return _ownerService.FindOwnerById(id);
         }
 
@@ -49,6 +55,7 @@ namespace PetShop.UI.restAPI.Controllers
             {
                 return BadRequest("Name is Required to create a Owner");
             }
+            
 
             return _ownerService.CreateOwner(owner);
         }
@@ -59,7 +66,12 @@ namespace PetShop.UI.restAPI.Controllers
         {
             if (id < 1 || id != owner.id)
             {
-                return BadRequest("Parameter id, and pet id must be the same!");
+                return BadRequest("Parameter id, and owner id must be the same!\n"
+                    + "Please enter a owner with id, and name");
+            }
+            else if (owner.name == null)
+            {
+                return BadRequest("Owner has to have a name");
             }
             return Ok(_ownerService.UpdateOwner(owner));
         }
@@ -71,7 +83,7 @@ namespace PetShop.UI.restAPI.Controllers
             var owner = _ownerService.FindOwnerById(id);
             if (owner == null)
             {
-                return StatusCode(404, "Could not find owner with id: " + id);
+                return StatusCode(406, "Could not find owner with id: " + id);
             }
 
             _ownerService.Delete(id);
