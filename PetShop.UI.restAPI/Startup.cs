@@ -5,15 +5,17 @@ using System.Threading.Tasks;
 using Core.ApplicationServices;
 using Core.ApplicationServices.Impl;
 using Core.DomainServices;
-using Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using PetShop.Infrastructure.SQL;
+using PetShop.Infrastructure.SQL.Repositories;
 
 namespace PetShop.UI.restAPI
 {
@@ -33,6 +35,8 @@ namespace PetShop.UI.restAPI
             services.AddScoped<IPetService, PetService>();
             services.AddScoped<IOwnerRepository, OwnerRepository>();
             services.AddScoped<IOwnerService, OwnerService>();
+
+            services.AddDbContext<PetShopContext>(opt => opt.UseSqlite("Data Source=PetShopApp.db"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -42,7 +46,7 @@ namespace PetShop.UI.restAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                FakeDB.InitData();
+                
             }
             else
             {

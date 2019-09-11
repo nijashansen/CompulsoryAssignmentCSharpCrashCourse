@@ -6,11 +6,11 @@ using System.Linq;
 
 namespace PetShop.Infrastructure.SQL.Repositories
 {
-    class PetRepository : IPetRepository
+    public class PetRepository : IPetRepository
     {
-        private PetContext _context;
+        private PetShopContext _context;
 
-        public PetRepository(PetContext context)
+        public PetRepository(PetShopContext context)
         {
             _context = context;
         }

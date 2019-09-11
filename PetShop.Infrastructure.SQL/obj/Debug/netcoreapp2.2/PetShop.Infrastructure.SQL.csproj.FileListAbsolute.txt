@@ -1,0 +1,14 @@
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\PetShop.Infrastructure.SQL\bin\Debug\netcoreapp2.2\PetShop.Infrastructure.SQL.deps.json
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\PetShop.Infrastructure.SQL\bin\Debug\netcoreapp2.2\PetShop.Infrastructure.SQL.dll
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\PetShop.Infrastructure.SQL\bin\Debug\netcoreapp2.2\PetShop.Infrastructure.SQL.pdb
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\PetShop.Infrastructure.SQL\bin\Debug\netcoreapp2.2\Core.dll
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\PetShop.Infrastructure.SQL\bin\Debug\netcoreapp2.2\Core.Entity.dll
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\PetShop.Infrastructure.SQL\bin\Debug\netcoreapp2.2\Core.Entity.pdb
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\PetShop.Infrastructure.SQL\bin\Debug\netcoreapp2.2\Core.pdb
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\PetShop.Infrastructure.SQL\obj\Debug\netcoreapp2.2\PetShop.Infrastructure.SQL.csprojAssemblyReference.cache
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\PetShop.Infrastructure.SQL\obj\Debug\netcoreapp2.2\PetShop.Infrastructure.SQL.csproj.CoreCompileInputs.cache
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\PetShop.Infrastructure.SQL\obj\Debug\netcoreapp2.2\PetShop.Infrastructure.SQL.AssemblyInfoInputs.cache
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\PetShop.Infrastructure.SQL\obj\Debug\netcoreapp2.2\PetShop.Infrastructure.SQL.AssemblyInfo.cs
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\PetShop.Infrastructure.SQL\obj\Debug\netcoreapp2.2\PetShop.Infrastructure.SQL.csproj.CopyComplete
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\PetShop.Infrastructure.SQL\obj\Debug\netcoreapp2.2\PetShop.Infrastructure.SQL.dll
+C:\Users\Nijas Hansen\source\repos\CompulsoryAssignmentCSharpCrashCourse\PetShop.Infrastructure.SQL\obj\Debug\netcoreapp2.2\PetShop.Infrastructure.SQL.pdb

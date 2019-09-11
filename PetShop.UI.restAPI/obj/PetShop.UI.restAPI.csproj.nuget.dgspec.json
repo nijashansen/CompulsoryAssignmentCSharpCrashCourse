@@ -112,14 +112,14 @@
         }
       }
     },
-    "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Infrastructure.Data\\Infrastructure.Data.csproj": {
+    "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\PetShop.Infrastructure.SQL\\PetShop.Infrastructure.SQL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Infrastructure.Data\\Infrastructure.Data.csproj",
-        "projectName": "Infrastructure.Data",
-        "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Infrastructure.Data\\Infrastructure.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\PetShop.Infrastructure.SQL\\PetShop.Infrastructure.SQL.csproj",
+        "projectName": "PetShop.Infrastructure.SQL",
+        "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\PetShop.Infrastructure.SQL\\PetShop.Infrastructure.SQL.csproj",
         "packagesPath": "C:\\Users\\Nijas Hansen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Infrastructure.Data\\obj\\",
+        "outputPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\PetShop.Infrastructure.SQL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -129,14 +129,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.1"
+          "netcoreapp2.2"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.1": {
+          "netcoreapp2.2": {
             "projectReferences": {
               "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core.Entity\\Core.Entity.csproj": {
                 "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core.Entity\\Core.Entity.csproj"
@@ -154,12 +154,28 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.1": {
+        "netcoreapp2.2": {
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite.Core": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
+            },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.1.0, )",
+              "version": "[2.2.0, )",
               "autoReferenced": true
             }
           },
@@ -188,14 +204,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp2.1"
+          "netcoreapp2.2"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp2.1": {
+          "netcoreapp2.2": {
             "projectReferences": {
               "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core.Entity\\Core.Entity.csproj": {
                 "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core.Entity\\Core.Entity.csproj"
@@ -203,8 +219,8 @@
               "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core\\Core.csproj": {
                 "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core\\Core.csproj"
               },
-              "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Infrastructure.Data\\Infrastructure.Data.csproj": {
-                "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Infrastructure.Data\\Infrastructure.Data.csproj"
+              "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\PetShop.Infrastructure.SQL\\PetShop.Infrastructure.SQL.csproj": {
+                "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\PetShop.Infrastructure.SQL\\PetShop.Infrastructure.SQL.csproj"
               }
             }
           }
@@ -216,27 +232,44 @@
         }
       },
       "frameworks": {
-        "netcoreapp2.1": {
+        "netcoreapp2.2": {
           "dependencies": {
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.1.1, )",
+              "version": "[2.2.0, )",
               "autoReferenced": true
             },
             "Microsoft.AspNetCore.Razor.Design": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.1.2, )"
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite.Core": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
             },
             "Microsoft.NETCore.App": {
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[2.1.0, )",
+              "version": "[2.2.0, )",
               "autoReferenced": true
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[2.1.9, )"
+              "version": "[2.2.3, )"
             }
           },
           "imports": [
