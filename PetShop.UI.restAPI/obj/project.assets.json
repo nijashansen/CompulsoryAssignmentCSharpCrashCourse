@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
+      "AzureToolkit/2.5.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "4.5.3",
+          "WindowsAzure.Storage": "1.7.0"
+        },
+        "compile": {
+          "lib/net40/AzureToolkit.dll": {}
+        },
+        "runtime": {
+          "lib/net40/AzureToolkit.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -2910,6 +2923,15 @@
           }
         }
       },
+      "Microsoft.WindowsAzure.ConfigurationManager/1.7.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35-full/Microsoft.WindowsAzure.Configuration.dll": {}
+        },
+        "runtime": {
+          "lib/net35-full/Microsoft.WindowsAzure.Configuration.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.3": {
         "type": "package",
         "dependencies": {
@@ -4907,6 +4929,18 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "WindowsAzure.Storage/1.7.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.WindowsAzure.ConfigurationManager": "1.7.0"
+        },
+        "compile": {
+          "lib/net35-full/Microsoft.WindowsAzure.StorageClient.dll": {}
+        },
+        "runtime": {
+          "lib/net35-full/Microsoft.WindowsAzure.StorageClient.dll": {}
+        }
+      },
       "Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
@@ -4951,6 +4985,19 @@
     }
   },
   "libraries": {
+    "AzureToolkit/2.5.0": {
+      "sha512": "BpMhnohm7ZM6bLASmkS5olikHToLMUiDM42aXiBuBdIpLvQ1HwE89B3HwBPa+rZdRWb2577m1N+nMrKiZNN0BA==",
+      "type": "package",
+      "path": "azuretoolkit/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "azuretoolkit.2.5.0.nupkg.sha512",
+        "azuretoolkit.nuspec",
+        "lib/net40/AzureToolkit.XML",
+        "lib/net40/AzureToolkit.dll"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "sha512": "owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
       "type": "package",
@@ -8203,6 +8250,18 @@
         "runtimes/win/lib/netstandard2.0/Microsoft.Win32.Registry.dll",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Microsoft.WindowsAzure.ConfigurationManager/1.7.0": {
+      "sha512": "1VedN38WLCN8VQuMi5a6V+ZwBwvnzt+/0KESBIogzi3gHdiO+fx7uW0KTtwW9kaSST/8q6QZal98g45soSuy1A==",
+      "type": "package",
+      "path": "microsoft.windowsazure.configurationmanager/1.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35-full/Microsoft.WindowsAzure.Configuration.dll",
+        "microsoft.windowsazure.configurationmanager.1.7.0.nupkg.sha512",
+        "microsoft.windowsazure.configurationmanager.nuspec"
       ]
     },
     "NETStandard.Library/2.0.3": {
@@ -13363,6 +13422,18 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
+    "WindowsAzure.Storage/1.7.0": {
+      "sha512": "z6ScRarrlIzum5uIk3oHy4rOlIhFTe4jHoxA24+tpwvjPR+x03IylY8LwLA4VTMIvYvHEsJ4XyIjgwsUnEuQNA==",
+      "type": "package",
+      "path": "windowsazure.storage/1.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35-full/Microsoft.WindowsAzure.StorageClient.dll",
+        "windowsazure.storage.1.7.0.nupkg.sha512",
+        "windowsazure.storage.nuspec"
+      ]
+    },
     "Core/1.0.0": {
       "type": "project",
       "path": "../Core/Core.csproj",
@@ -13381,6 +13452,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "AzureToolkit >= 2.5.0",
       "Core >= 1.0.0",
       "Core.Entity >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
@@ -13445,6 +13517,10 @@
     "frameworks": {
       "netcoreapp2.2": {
         "dependencies": {
+          "AzureToolkit": {
+            "target": "Package",
+            "version": "[2.5.0, )"
+          },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",
@@ -13490,5 +13566,37 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'AzureToolkit 2.5.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.2'. This package may not be fully compatible with your project.",
+      "libraryId": "AzureToolkit",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.2"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.WindowsAzure.ConfigurationManager 1.7.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.2'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.WindowsAzure.ConfigurationManager",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.2"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'WindowsAzure.Storage 1.7.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.2'. This package may not be fully compatible with your project.",
+      "libraryId": "WindowsAzure.Storage",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.2"
+      ]
+    }
+  ]
 }

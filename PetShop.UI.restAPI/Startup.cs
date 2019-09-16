@@ -9,33 +9,71 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PetShop.Infrastructure.SQL;
 using PetShop.Infrastructure.SQL.Repositories;
+using PetShop.UI.restAPI.Data;
 
 namespace PetShop.UI.restAPI
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment environment)
         {
             Configuration = configuration;
+            Environment = environment;
         }
 
         public IConfiguration Configuration { get; }
+        
+        public IHostingEnvironment Environment { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            // Add CORS
+            services.AddCors();
+
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy("AllowAnyOrigin",
+            //                      builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            //});
+            
+            if (Environment.IsDevelopment())
+            {
+                // In-memory database:
+                services.AddDbContext<PetShopContext>(opt => opt.UseInMemoryDatabase("PetShopApp"));
+            } 
+            else 
+            {
+                // Azure SQL database:
+                services.AddDbContext<PetShopContext>(opt =>
+                    opt.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
+            }
+            
             services.AddScoped<IPetRepository, PetRepository>();
             services.AddScoped<IPetService, PetService>();
             services.AddScoped<IOwnerRepository, OwnerRepository>();
             services.AddScoped<IOwnerService, OwnerService>();
 
-            services.AddDbContext<PetShopContext>(opt => opt.UseSqlite("Data Source=PetShopApp.db"));
+            services.AddTransient<IDbInitializer, DbInitializer>();
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
+            using (var scope = app.ApplicationServices.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                var dbContext = services.GetService<PetShopContext>();
+                var dbInitializer = services.GetService<IDbInitializer>();
+                dbInitializer.Initialize(dbContext);
+            }
+
+            app.UseDeveloperExceptionPage();
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -47,6 +85,9 @@ namespace PetShop.UI.restAPI
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            
             app.UseMvc();
         }
     }

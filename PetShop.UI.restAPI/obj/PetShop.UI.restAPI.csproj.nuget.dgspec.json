@@ -234,6 +234,10 @@
       "frameworks": {
         "netcoreapp2.2": {
           "dependencies": {
+            "AzureToolkit": {
+              "target": "Package",
+              "version": "[2.5.0, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",

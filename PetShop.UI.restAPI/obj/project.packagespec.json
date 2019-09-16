@@ -1,0 +1,92 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\PetShop.UI.restAPI\\PetShop.UI.restAPI.csproj",
+    "projectName": "PetShop.UI.restAPI",
+    "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\PetShop.UI.restAPI\\PetShop.UI.restAPI.csproj",
+    "outputPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\PetShop.UI.restAPI\\obj\\",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "netcoreapp2.2"
+    ],
+    "sources": {
+      "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+      "https://api.nuget.org/v3/index.json": {}
+    },
+    "frameworks": {
+      "netcoreapp2.2": {
+        "projectReferences": {
+          "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core.Entity\\Core.Entity.csproj": {
+            "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core.Entity\\Core.Entity.csproj"
+          },
+          "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core\\Core.csproj": {
+            "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\Core\\Core.csproj"
+          },
+          "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\PetShop.Infrastructure.SQL\\PetShop.Infrastructure.SQL.csproj": {
+            "projectPath": "C:\\Users\\Nijas Hansen\\source\\repos\\CompulsoryAssignmentCSharpCrashCourse\\PetShop.Infrastructure.SQL\\PetShop.Infrastructure.SQL.csproj"
+          }
+        }
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "netcoreapp2.2": {
+      "dependencies": {
+        "AzureToolkit": {
+          "target": "Package",
+          "version": "[2.5.0, )"
+        },
+        "Microsoft.AspNetCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.2.0, )",
+          "autoReferenced": true
+        },
+        "Microsoft.AspNetCore.Razor.Design": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.2.0, )"
+        },
+        "Microsoft.EntityFrameworkCore.SqlServer": {
+          "target": "Package",
+          "version": "[2.2.6, )"
+        },
+        "Microsoft.EntityFrameworkCore.Sqlite": {
+          "target": "Package",
+          "version": "[2.2.6, )"
+        },
+        "Microsoft.EntityFrameworkCore.Sqlite.Core": {
+          "target": "Package",
+          "version": "[2.2.6, )"
+        },
+        "Microsoft.EntityFrameworkCore.Sqlite.Design": {
+          "target": "Package",
+          "version": "[1.1.6, )"
+        },
+        "Microsoft.NETCore.App": {
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[2.2.0, )",
+          "autoReferenced": true
+        },
+        "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+          "target": "Package",
+          "version": "[2.2.3, )"
+        }
+      },
+      "imports": [
+        "net461"
+      ],
+      "assetTargetFallback": true,
+      "warn": true
+    }
+  }
+}

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e21ac18b-e54f-4ad4-be74-2af859b24fa8" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="MsDeploy.Remote" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/PetShop.UI.restAPI/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PetShop.UI.restAPI/Data/IDbInitializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PetShop.UI.restAPI/Controllers/PetsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PetShop.UI.restAPI/Data/DbInitializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/OwnerRepository.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/OwnerRepository.cs" />
+        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Properties/PublishProfiles/azure.pubxml" />
+        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Data/IDbInitializer.cs" />
+        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Data/DbInitializer.cs" />
+        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Startup.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1QulQ6WDSJ3zJcirB2lVJUxt3fQ" />
+  <component name="PropertiesComponent">
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
+    <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="ignore.virus.scanning.warn.message" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Azure - Publish Web App.Publish PetShop.UI.restAPI to Azure">
+    <configuration name="Publish PetShop.UI.restAPI to Azure" type="AzureDotNetWebAppPublish" factoryName="Azure Web App" temporary="true">
+      <option name="AZURE_WEB_APP_PROJECT" value="$PROJECT_DIR$/PetShop.UI.restAPI/PetShop.UI.restAPI.csproj" />
+      <option name="AZURE_WEB_APP_SUBSCRIPTION_ID" value="ed8f0f84-a848-43bd-a6a4-8f6b32f49817" />
+      <option name="AZURE_WEB_APP_IS_CREATE_APP" value="0" />
+      <option name="AZURE_WEB_APP_ID" value="/subscriptions/ed8f0f84-a848-43bd-a6a4-8f6b32f49817/resourceGroups/PetShop-NWH-EASV-DK/providers/Microsoft.Web/sites/PetShop-NWH-EASV-DK" />
+      <option name="AZURE_WEB_APP_NAME" value="" />
+      <option name="AZURE_WEB_APP_IS_CREATE_RESOURCE_GROUP" value="0" />
+      <option name="AZURE_WEB_APP_RESOURCE_GROUP_NAME" value="" />
+      <option name="AZURE_WEB_APP_OPERATING_SYSTEM" value="WINDOWS" />
+      <option name="AZURE_WEB_APP_IS_CREATE_APP_SERVICE_PLAN" value="0" />
+      <option name="AZURE_WEB_APP_SERVICE_PLAN_ID" value="/subscriptions/ed8f0f84-a848-43bd-a6a4-8f6b32f49817/resourceGroups/nh-easv-test/providers/Microsoft.Web/serverfarms/ASP-nheasvtest-bfe2" />
+      <option name="AZURE_WEB_APP_SERVICE_PLAN_NAME" value="" />
+      <option name="AZURE_WEB_APP_LOCATION" value="eastus" />
+      <option name="AZURE_WEB_APP_PRICING_TIER" value="B1" />
+      <option name="AZURE_WEB_APP_NET_FRAMEWORK" value="4.7" />
+      <option name="AZURE_WEB_APP_NET_CORE_RUNTIME" value="DOTNETCORE 2.1" />
+      <option name="AZURE_SQL_DATABASE_SUBSCRIPTION_ID" value="ed8f0f84-a848-43bd-a6a4-8f6b32f49817" />
+      <option name="AZURE_SQL_DATABASE_IS_ENABLED" value="0" />
+      <option name="AZURE_SQL_DATABASE_CONNECTION_STRING_NAME" value="" />
+      <option name="AZURE_SQL_DATABASE_IS_CREATE" value="0" />
+      <option name="AZURE_SQL_DATABASE_ID" value="/subscriptions/ed8f0f84-a848-43bd-a6a4-8f6b32f49817/resourceGroups/PetShop-NWH-EASV-DK/providers/Microsoft.Sql/servers/petserver-nwh-easv-dk/databases/PetShopDB" />
+      <option name="AZURE_SQL_DATABASE_NAME" value="" />
+      <option name="AZURE_SQL_DATABASE_IS_CREATE_RESOURCE_GROUP" value="0" />
+      <option name="AZURE_SQL_DATABASE_RESOURCE_GROUP_NAME" value="" />
+      <option name="AZURE_SQL_DATABASE_IS_CREATE_SQL_SERVER" value="0" />
+      <option name="AZURE_SQL_DATABASE_SQL_SERVER_ID" value="" />
+      <option name="AZURE_SQL_DATABASE_SQL_SERVER_NAME" value="" />
+      <option name="AZURE_SQL_DATABASE_SQL_SERVER_ADMIN_LOGIN" value="NH" />
+      <option name="AZURE_SQL_DATABASE_LOCATION" value="eastus" />
+      <option name="AZURE_SQL_DATABASE_COLLATION" value="SQL_Latin1_General_CP1_CI_AS" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish PetShop.UI.restAPI to IIS" type="DotNetMsBuildPublish" factoryName="Publish to IIS" temporary="true">
+      <riderPublish uuid_high="-6271638105942505868" uuid_low="-5220192112960414282" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Publish PetShop.UI.restAPI to custom server" type="DotNetPublishAndUpload" factoryName="Publish to custom server" temporary="true">
+      <riderPublish uuid_high="-6271638105942505868" uuid_low="-5220192112960414282" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PetShop.UI.restAPI" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/PetShop.UI.restAPI/PetShop.UI.restAPI.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v2.2" />
+      <option name="LAUNCH_PROFILE_NAME" value="PetShop.UI.restAPI" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PetShop.UI.restAPI: IIS Express (1)" type="LaunchSettings" factoryName=".NET Launch Settings Profile" temporary="true">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/PetShop.UI.restAPI/PetShop.UI.restAPI.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v2.2" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PetShop.UI.restAPI: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/PetShop.UI.restAPI/PetShop.UI.restAPI.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value=".NETCoreApp,Version=v2.2" />
+      <option name="LAUNCH_PROFILE_NAME" value="IIS Express" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Azure - Publish Web App.Publish PetShop.UI.restAPI to Azure" />
+        <item itemvalue=".NET Launch Settings Profile.PetShop.UI.restAPI: IIS Express (1)" />
+        <item itemvalue="Publish to custom server.Publish PetShop.UI.restAPI to custom server" />
+        <item itemvalue="Publish to IIS.Publish PetShop.UI.restAPI to IIS" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e21ac18b-e54f-4ad4-be74-2af859b24fa8" name="Default Changelist" comment="" />
+      <created>1568628345459</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568628345459</updated>
+      <workItem from="1568628351216" duration="317000" />
+      <workItem from="1568628811005" duration="774000" />
+      <workItem from="1568629719846" duration="219000" />
+      <workItem from="1568630268797" duration="218000" />
+      <workItem from="1568630593634" duration="730000" />
+      <workItem from="1568635696438" duration="1801000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

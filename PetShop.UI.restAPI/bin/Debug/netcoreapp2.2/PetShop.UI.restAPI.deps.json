@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "f528012ceab433a906f2babc52be9c00ba347886"
+    "signature": "b4f8e9c3f4f00e6a8a61f5d1fcb97f8220802871"
   },
   "compilationOptions": {
     "defines": [
@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v2.2": {
       "PetShop.UI.restAPI/1.0.0": {
         "dependencies": {
+          "AzureToolkit": "2.5.0",
           "Core": "1.0.0",
           "Core.Entity": "1.0.0",
           "Microsoft.AspNetCore.App": "2.2.0",
@@ -41,6 +42,21 @@
         },
         "compile": {
           "PetShop.UI.restAPI.dll": {}
+        }
+      },
+      "AzureToolkit/2.5.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2",
+          "WindowsAzure.Storage": "1.7.0"
+        },
+        "runtime": {
+          "lib/net40/AzureToolkit.dll": {
+            "assemblyVersion": "2.4.6.0",
+            "fileVersion": "2.5.0.0"
+          }
+        },
+        "compile": {
+          "lib/net40/AzureToolkit.dll": {}
         }
       },
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
@@ -327,6 +343,17 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll": {}
+        }
+      },
+      "Microsoft.WindowsAzure.ConfigurationManager/1.7.0": {
+        "runtime": {
+          "lib/net35-full/Microsoft.WindowsAzure.Configuration.dll": {
+            "assemblyVersion": "1.7.0.0",
+            "fileVersion": "1.7.0.0"
+          }
+        },
+        "compile": {
+          "lib/net35-full/Microsoft.WindowsAzure.Configuration.dll": {}
         }
       },
       "NuGet.Frameworks/4.7.0": {
@@ -730,6 +757,20 @@
             "assemblyVersion": "4.1.1.0",
             "fileVersion": "4.6.26515.6"
           }
+        }
+      },
+      "WindowsAzure.Storage/1.7.0": {
+        "dependencies": {
+          "Microsoft.WindowsAzure.ConfigurationManager": "1.7.0"
+        },
+        "runtime": {
+          "lib/net35-full/Microsoft.WindowsAzure.StorageClient.dll": {
+            "assemblyVersion": "1.7.0.0",
+            "fileVersion": "6.0.6002.18488"
+          }
+        },
+        "compile": {
+          "lib/net35-full/Microsoft.WindowsAzure.StorageClient.dll": {}
         }
       },
       "Core/1.0.0": {
@@ -3846,6 +3887,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AzureToolkit/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BpMhnohm7ZM6bLASmkS5olikHToLMUiDM42aXiBuBdIpLvQ1HwE89B3HwBPa+rZdRWb2577m1N+nMrKiZNN0BA==",
+      "path": "azuretoolkit/2.5.0",
+      "hashPath": "azuretoolkit.2.5.0.nupkg.sha512"
+    },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",
       "serviceable": true,
@@ -3985,6 +4033,13 @@
       "sha512": "sha512-0gVuA4KUCHFM4M/9SjG+7j7BzZ7SW/BufF97Q78i2VV8JBbQXc/5Rf6YUG1VGW2fwSEOl9+S26utEGS+86GGGw==",
       "path": "microsoft.visualstudio.web.codegenerators.mvc/2.2.3",
       "hashPath": "microsoft.visualstudio.web.codegenerators.mvc.2.2.3.nupkg.sha512"
+    },
+    "Microsoft.WindowsAzure.ConfigurationManager/1.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1VedN38WLCN8VQuMi5a6V+ZwBwvnzt+/0KESBIogzi3gHdiO+fx7uW0KTtwW9kaSST/8q6QZal98g45soSuy1A==",
+      "path": "microsoft.windowsazure.configurationmanager/1.7.0",
+      "hashPath": "microsoft.windowsazure.configurationmanager.1.7.0.nupkg.sha512"
     },
     "NuGet.Frameworks/4.7.0": {
       "type": "package",
@@ -4153,6 +4208,13 @@
       "sha512": "sha512-S0wEUiKcLvRlkFUXca8uio1UQ5bYQzYgOmOKtCqaBQC3GR9AJjh43otcM32IGsAyvadFTaAMw9Irm6dS4Evfng==",
       "path": "system.text.encoding.codepages/4.5.0",
       "hashPath": "system.text.encoding.codepages.4.5.0.nupkg.sha512"
+    },
+    "WindowsAzure.Storage/1.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z6ScRarrlIzum5uIk3oHy4rOlIhFTe4jHoxA24+tpwvjPR+x03IylY8LwLA4VTMIvYvHEsJ4XyIjgwsUnEuQNA==",
+      "path": "windowsazure.storage/1.7.0",
+      "hashPath": "windowsazure.storage.1.7.0.nupkg.sha512"
     },
     "Core/1.0.0": {
       "type": "project",
