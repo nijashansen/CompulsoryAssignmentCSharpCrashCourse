@@ -6,9 +6,10 @@ namespace Core.Entity
 {
     public class Owner
     {
-
         public int id { get; set; }
 
         public string name { get; set; }
+        
+        public List<Pet> OwnedPets { get; set; }
     }
 }

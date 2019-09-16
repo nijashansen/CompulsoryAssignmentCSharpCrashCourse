@@ -54,8 +54,10 @@
             </e>
           </e>
         </e>
-        <e p="OwnerRepository.cs" t="Include" />
-        <e p="PetRepository.cs" t="Include" />
+        <e p="Repositories" t="Include">
+          <e p="OwnerRepository.cs" t="Include" />
+          <e p="PetRepository.cs" t="Include" />
+        </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="PetShop" t="IncludeRecursive">
@@ -95,7 +97,6 @@
         <e p="Controllers" t="Include">
           <e p="OwnersController.cs" t="Include" />
           <e p="PetsController.cs" t="Include" />
-          <e p="ValuesController.cs" t="Include" />
         </e>
         <e p="Data" t="Include">
           <e p="DbInitializer.cs" t="Include" />

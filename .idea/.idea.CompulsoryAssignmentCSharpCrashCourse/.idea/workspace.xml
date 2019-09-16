@@ -25,6 +25,12 @@
     <setting file="file://$PROJECT_DIR$/PetShop.UI.restAPI/Controllers/PetsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PetShop.UI.restAPI/Data/DbInitializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/OwnerRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core.Entity/Pet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/PetRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core.Entity/Owner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure.Data/Repositories/PetRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/PetContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Infrastructure.Data/FakeDB.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -32,6 +38,10 @@
         <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/OwnerRepository.cs" />
         <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Properties/PublishProfiles/azure.pubxml" />
         <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Data/IDbInitializer.cs" />
+        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Controllers/PetsController.cs" />
+        <option value="$PROJECT_DIR$/Core.Entity/Owner.cs" />
+        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/PetContext.cs" />
+        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/PetRepository.cs" />
         <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Data/DbInitializer.cs" />
         <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Startup.cs" />
       </list>
@@ -43,7 +53,7 @@
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -170,6 +180,7 @@
       <workItem from="1568635696438" duration="2120000" />
       <workItem from="1568637856390" duration="147000" />
       <workItem from="1568638032212" duration="629000" />
+      <workItem from="1568650305100" duration="5435000" />
     </task>
     <servers />
   </component>

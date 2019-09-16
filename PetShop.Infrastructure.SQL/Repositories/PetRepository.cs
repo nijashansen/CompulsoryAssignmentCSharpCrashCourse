@@ -21,14 +21,7 @@ namespace PetShop.Infrastructure.SQL.Repositories
             _context.SaveChanges();
             return petToCreate;
         }
-
-        public Pet Delete(int petToDelete)
-        {
-            var toDelete = _context.Remove(new Pet {ID = petToDelete}).Entity;
-            _context.SaveChanges();
-            return toDelete;
-        }
-
+        
         public Pet ReadPetById(int id)
         {
             return _context.pets.FirstOrDefault(prop => prop.ID == id);
@@ -42,6 +35,13 @@ namespace PetShop.Infrastructure.SQL.Repositories
         public Pet UpdatePet(Pet petToBeUpdated)
         {
             throw new NotImplementedException();
+        }
+        
+        public Pet Delete(int petToDelete)
+        {
+            var toDelete = _context.Remove(new Pet {ID = petToDelete}).Entity;
+            _context.SaveChanges();
+            return toDelete;
         }
     }
 }

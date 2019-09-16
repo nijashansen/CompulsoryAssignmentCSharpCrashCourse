@@ -1,6 +1,8 @@
-﻿using Core.ApplicationServices;
+﻿using System;
+using Core.ApplicationServices;
 using Core.ApplicationServices.Impl;
 using Core.DomainServices;
+using Core.Entity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -55,7 +57,6 @@ namespace PetShop.UI.restAPI
             services.AddScoped<IOwnerRepository, OwnerRepository>();
             services.AddScoped<IOwnerService, OwnerService>();
 
-            services.AddTransient<IDbInitializer, DbInitializer>();
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -64,20 +65,32 @@ namespace PetShop.UI.restAPI
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
 
-            using (var scope = app.ApplicationServices.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-                var dbContext = services.GetService<PetShopContext>();
-                var dbInitializer = services.GetService<IDbInitializer>();
-                dbInitializer.Initialize(dbContext);
-            }
+            
 
             app.UseDeveloperExceptionPage();
             
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                
+                using (var scope = app.ApplicationServices.CreateScope())
+                {
+                    var ctx = scope.ServiceProvider.GetService<PetShopContext>();
+                    ctx.pets.Add(new Pet
+                    {
+                        ID = 1,
+                        Name = "Peter"
+                    });
+                    ctx.Add(new Pet
+                    {
+                        ID = 2,
+                        Name = "Lone"
+                    });
+                    ctx.owners.Add(new Owner
+                    {
+                        id = 1,
+                        name = "Orla"
+                    });
+                }
             }
             else
             {
@@ -85,8 +98,7 @@ namespace PetShop.UI.restAPI
             }
 
             app.UseHttpsRedirection();
-
-            //wup 
+            
             app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             
             app.UseMvc();

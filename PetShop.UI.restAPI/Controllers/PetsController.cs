@@ -30,7 +30,7 @@ namespace PetShop.UI.restAPI.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest("Couldt get any pets");
+                return BadRequest($"Could not get any pets");
             }       
         }
 
@@ -63,8 +63,7 @@ namespace PetShop.UI.restAPI.Controllers
 
             return _petService.CreatePet(pet);
         }
-
-        //whup
+        
 
 
         // PUT api/values/5
