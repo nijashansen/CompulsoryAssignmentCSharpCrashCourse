@@ -43,7 +43,7 @@
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -71,7 +71,7 @@
       <option name="AZURE_WEB_APP_SERVICE_PLAN_ID" value="/subscriptions/ed8f0f84-a848-43bd-a6a4-8f6b32f49817/resourceGroups/nh-easv-test/providers/Microsoft.Web/serverfarms/ASP-nheasvtest-bfe2" />
       <option name="AZURE_WEB_APP_SERVICE_PLAN_NAME" value="" />
       <option name="AZURE_WEB_APP_LOCATION" value="eastus" />
-      <option name="AZURE_WEB_APP_PRICING_TIER" value="B1" />
+      <option name="AZURE_WEB_APP_PRICING_TIER" value="" />
       <option name="AZURE_WEB_APP_NET_FRAMEWORK" value="4.7" />
       <option name="AZURE_WEB_APP_NET_CORE_RUNTIME" value="DOTNETCORE 2.1" />
       <option name="AZURE_SQL_DATABASE_SUBSCRIPTION_ID" value="ed8f0f84-a848-43bd-a6a4-8f6b32f49817" />
@@ -167,7 +167,9 @@
       <workItem from="1568629719846" duration="219000" />
       <workItem from="1568630268797" duration="218000" />
       <workItem from="1568630593634" duration="730000" />
-      <workItem from="1568635696438" duration="1801000" />
+      <workItem from="1568635696438" duration="2120000" />
+      <workItem from="1568637856390" duration="147000" />
+      <workItem from="1568638032212" duration="629000" />
     </task>
     <servers />
   </component>

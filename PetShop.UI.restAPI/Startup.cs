@@ -86,6 +86,7 @@ namespace PetShop.UI.restAPI
 
             app.UseHttpsRedirection();
 
+            //wup 
             app.UseCors(builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             
             app.UseMvc();
