@@ -21,29 +21,40 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/PetShop.UI.restAPI/Startup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PetShop.UI.restAPI/Data/IDbInitializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PetShop.UI.restAPI/Controllers/PetsController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PetShop.UI.restAPI/Data/DbInitializer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/OwnerRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PetShop.UI.restAPI/Controllers/OwnersController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core.Entity/Pet.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/PetRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core.Entity/Owner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure.Data/Repositories/PetRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/PetContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure.Data/FakeDB.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PetShop.UI.restAPI/Data/IDbInitializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PetShop.UI.restAPI/Data/DbInitializer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/OwnerRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/DomainServices/IPetRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/PetRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/ApplicationServices/IPetService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/ApplicationServices/IOwnerService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/ApplicationServices/Impl/OwnerService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/ApplicationServices/Impl/PetService.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/OwnerRepository.cs" />
         <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Properties/PublishProfiles/azure.pubxml" />
         <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Data/IDbInitializer.cs" />
         <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Controllers/PetsController.cs" />
         <option value="$PROJECT_DIR$/Core.Entity/Owner.cs" />
         <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/PetContext.cs" />
-        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/PetRepository.cs" />
-        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Data/DbInitializer.cs" />
+        <option value="$PROJECT_DIR$/Core/ApplicationServices/Impl/OwnerService.cs" />
+        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/OwnerRepository.cs" />
+        <option value="$PROJECT_DIR$/Core/ApplicationServices/IPetService.cs" />
+        <option value="$PROJECT_DIR$/Core/ApplicationServices/Impl/PetService.cs" />
+        <option value="$PROJECT_DIR$/Core/DomainServices/IPetRepository.cs" />
+        <option value="$PROJECT_DIR$/Infrastructure.Data/Repositories/PetRepository.cs" />
         <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Startup.cs" />
+        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Data/DbInitializer.cs" />
+        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/PetRepository.cs" />
       </list>
     </option>
   </component>
@@ -67,7 +78,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Azure - Publish Web App.Publish PetShop.UI.restAPI to Azure">
+  <component name="RunManager" selected=".NET Launch Settings Profile.PetShop.UI.restAPI">
     <configuration name="Publish PetShop.UI.restAPI to Azure" type="AzureDotNetWebAppPublish" factoryName="Azure Web App" temporary="true">
       <option name="AZURE_WEB_APP_PROJECT" value="$PROJECT_DIR$/PetShop.UI.restAPI/PetShop.UI.restAPI.csproj" />
       <option name="AZURE_WEB_APP_SUBSCRIPTION_ID" value="ed8f0f84-a848-43bd-a6a4-8f6b32f49817" />
@@ -181,6 +192,7 @@
       <workItem from="1568637856390" duration="147000" />
       <workItem from="1568638032212" duration="629000" />
       <workItem from="1568650305100" duration="5435000" />
+      <workItem from="1568714433707" duration="7697000" />
     </task>
     <servers />
   </component>

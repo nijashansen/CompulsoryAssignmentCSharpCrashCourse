@@ -53,7 +53,9 @@ namespace Core.ApplicationServices.Impl
 
         public Owner Delete(int id)
         {
-            return _ownerRepo.Delete(id);
+            var foundOwner = FindOwnerById(id);
+            _ownerRepo.Delete(foundOwner.id);
+            return foundOwner;
         }
     }
 }

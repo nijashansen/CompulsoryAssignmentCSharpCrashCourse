@@ -17,5 +17,6 @@ namespace Core.DomainServices
         Pet UpdatePet(Pet petToBeUpdated);
 
         Pet Delete(int petToDelete);
+        Pet ReadyByIdIncludeOwners(int id);
     }
 }

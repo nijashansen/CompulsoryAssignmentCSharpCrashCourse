@@ -3,6 +3,7 @@ using Core.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace PetShop.Infrastructure.SQL.Repositories
 {
@@ -29,7 +30,7 @@ namespace PetShop.Infrastructure.SQL.Repositories
 
         public IEnumerable<Pet> ReadPets()
         {
-            return _context.pets.ToList();
+            return _context.pets.Include(p => p.PrevOwner).ToList();
         }
 
         public Pet UpdatePet(Pet petToBeUpdated)
@@ -42,6 +43,13 @@ namespace PetShop.Infrastructure.SQL.Repositories
             var toDelete = _context.Remove(new Pet {ID = petToDelete}).Entity;
             _context.SaveChanges();
             return toDelete;
+        }
+
+        public Pet ReadyByIdIncludeOwners(int id)
+        {
+            return _context.pets
+                .Include(pet =>  pet.PrevOwner).ToList()
+                .FirstOrDefault(pet => pet.ID == id);
         }
     }
 }

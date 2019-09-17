@@ -3,6 +3,7 @@ using Core.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace PetShop.Infrastructure.SQL.Repositories
 {

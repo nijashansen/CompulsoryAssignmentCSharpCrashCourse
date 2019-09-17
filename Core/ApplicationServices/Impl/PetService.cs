@@ -70,6 +70,11 @@ namespace Core.ApplicationServices.Impl
             var orderedList = list.OrderBy(pet => pet.Price);
             return orderedList.ToList();
         }
+        
+        public Pet FindCustomerByIdIncludeOrders(int id)
+        {
+            return _petRepo.ReadyByIdIncludeOwners(id);
+        }
 
         public Pet UpdatePet(Pet petUpdate)
         {

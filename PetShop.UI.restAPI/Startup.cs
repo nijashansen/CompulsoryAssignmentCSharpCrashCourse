@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 using PetShop.Infrastructure.SQL;
 using PetShop.Infrastructure.SQL.Repositories;
 using PetShop.UI.restAPI.Data;
@@ -43,7 +44,7 @@ namespace PetShop.UI.restAPI
             if (Environment.IsDevelopment())
             {
                 // In-memory database:
-                services.AddDbContext<PetShopContext>(opt => opt.UseInMemoryDatabase("PetShopApp"));
+                services.AddDbContext<PetShopContext>(opt => opt.UseSqlite("Data Source= PetShopApp.db"));
             } 
             else 
             {
@@ -57,6 +58,10 @@ namespace PetShop.UI.restAPI
             services.AddScoped<IOwnerRepository, OwnerRepository>();
             services.AddScoped<IOwnerService, OwnerService>();
 
+            services.AddTransient<IDbInitializer, DbInitializer>();
+
+            services.AddMvc().AddJsonOptions(opt =>
+                opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -64,33 +69,22 @@ namespace PetShop.UI.restAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-
             
-
             app.UseDeveloperExceptionPage();
             
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
                 using (var scope = app.ApplicationServices.CreateScope())
                 {
-                    var ctx = scope.ServiceProvider.GetService<PetShopContext>();
-                    ctx.pets.Add(new Pet
-                    {
-                        ID = 1,
-                        Name = "Peter"
-                    });
-                    ctx.Add(new Pet
-                    {
-                        ID = 2,
-                        Name = "Lone"
-                    });
-                    ctx.owners.Add(new Owner
-                    {
-                        id = 1,
-                        name = "Orla"
-                    });
+                    // Initialize the database
+                    var services = scope.ServiceProvider;
+                    var dbContext = services.GetService<PetShopContext>();
+                    var dbInitializer = services.GetService<IDbInitializer>();
+                    
+                    dbInitializer.Initialize(dbContext);
                 }
+                
+                app.UseDeveloperExceptionPage();
             }
             else
             {

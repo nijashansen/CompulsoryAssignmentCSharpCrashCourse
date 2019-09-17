@@ -10,37 +10,41 @@ namespace PetShop.UI.restAPI.Data
     {
         public void Initialize(PetShopContext context)
         {
+            List<Pet> pets = new List<Pet>();
+
+
+            context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
-
-            if (context.pets.Any())
-            {
-                return;
-            }
             
-            List<Owner> owners = new List<Owner>
+            List<Owner> owners = new List<Owner>();
+            Owner owner1;
+            owners.Add(owner1 = new Owner()
             {
-                context.owners.Add(new Owner
-                {
-                    id = 1,
-                    name = "Søgge"
-                }).Entity
-            };
-
-            List<Pet> pets = new List<Pet>
+                name = "Lone",
+                OwnedPets = pets
+            });
+            Owner owner2;
+            owners.Add(owner2 = new Owner()
             {
-                context.pets.Add(new Pet
-                {
-                    ID = 2,
-                    Name = "Børge",
-                    BirthDay = new DateTime(1997, 2, 5),
-                    Color = "Gray",
-                    Price = 300000,
-                    TypeOfPet = "Goat",
-                    SoldDate = new DateTime(2006, 1, 1)
-                }).Entity
-            };
+                name = "Peter",
+                OwnedPets = pets
+            });
             
-            context.owners.AddRange(owners);
+            pets.Add(new Pet()
+            {
+                Name = "John",
+                Color = "Blue",
+                PrevOwner = owner1
+            });
+            pets.Add(new Pet()
+            {
+                Name = "Kris",
+                Color = "Orange",
+                PrevOwner = owner2
+            });
+
+            
+            
             context.pets.AddRange(pets);
             context.SaveChanges();
         }

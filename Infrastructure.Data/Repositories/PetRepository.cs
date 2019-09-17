@@ -29,6 +29,11 @@ namespace Infrastructure.Data
             return null;
         }
 
+        public Pet ReadyByIdIncludeOwners(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Pet ReadPetById(int id)
         {
             foreach (var pet in _pets)
