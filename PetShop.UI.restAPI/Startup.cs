@@ -12,7 +12,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using PetShop.Infrastructure.SQL;
 using PetShop.Infrastructure.SQL.Repositories;
-using PetShop.UI.restAPI.Data;
 
 namespace PetShop.UI.restAPI
 {
@@ -58,7 +57,7 @@ namespace PetShop.UI.restAPI
             services.AddScoped<IOwnerRepository, OwnerRepository>();
             services.AddScoped<IOwnerService, OwnerService>();
 
-            services.AddTransient<IDbInitializer, DbInitializer>();
+            
 
             services.AddMvc().AddJsonOptions(opt =>
                 opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
@@ -77,11 +76,8 @@ namespace PetShop.UI.restAPI
                 using (var scope = app.ApplicationServices.CreateScope())
                 {
                     // Initialize the database
-                    var services = scope.ServiceProvider;
-                    var dbContext = services.GetService<PetShopContext>();
-                    var dbInitializer = services.GetService<IDbInitializer>();
-                    
-                    dbInitializer.Initialize(dbContext);
+                    var ctx = scope.ServiceProvider.GetService<PetShopContext>();
+                    DBInitializer.Initialize(ctx);
                 }
                 
                 app.UseDeveloperExceptionPage();

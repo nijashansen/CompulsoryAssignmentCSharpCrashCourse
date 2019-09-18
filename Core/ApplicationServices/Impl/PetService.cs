@@ -47,6 +47,12 @@ namespace Core.ApplicationServices.Impl
             return _petRepo.ReadPets().ToList();
         }
 
+        public Pet GetPetIncludeOwners(int id)
+        {
+            var pet = _petRepo.ReadPetByIdIncludingOwner(id);
+            return pet;
+        }
+
         public List<Pet> GetPetsByType(string type)
         {
             var list = _petRepo.ReadPets();
@@ -71,14 +77,9 @@ namespace Core.ApplicationServices.Impl
             return orderedList.ToList();
         }
         
-        public Pet FindCustomerByIdIncludeOrders(int id)
-        {
-            return _petRepo.ReadyByIdIncludeOwners(id);
-        }
-
         public Pet UpdatePet(Pet petUpdate)
         {
-            var pet = FindPetById(petUpdate.ID);
+            var pet = FindPetById(petUpdate.Id);
 
             pet.Name = petUpdate.Name;
             pet.PrevOwner = petUpdate.PrevOwner;
@@ -92,9 +93,9 @@ namespace Core.ApplicationServices.Impl
 
         public Owner getOwner(Pet pet)
         {
-            var pettie = FindPetById(pet.ID);
+            var pet2 = FindPetById(pet.Id);
 
-            return pettie.PrevOwner;
+            return pet2.PrevOwner;
         }
 
         public Pet Delete(int id)

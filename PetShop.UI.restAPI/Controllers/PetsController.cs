@@ -70,7 +70,7 @@ namespace PetShop.UI.restAPI.Controllers
         [HttpPut("{id}")]
         public ActionResult<Pet> Put(int id, [FromBody] Pet pet)
         {
-            if (id < 1 || id != pet.ID)
+            if (id < 1 || id != pet.Id)
             {
                 return BadRequest("Parameter id, and pet id must be the same!");
             }
@@ -78,7 +78,7 @@ namespace PetShop.UI.restAPI.Controllers
             {
                 return BadRequest("Please enter an owner with an id");
             }
-            else if (pet.PrevOwner.id != _petService.getOwner(pet).id)
+            else if (pet.PrevOwner.Id != _petService.getOwner(pet).Id)
             {
                 return BadRequest("Previous Owner Parameter id, and Previous owner id, must be the same");
             }

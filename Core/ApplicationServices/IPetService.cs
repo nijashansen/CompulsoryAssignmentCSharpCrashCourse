@@ -17,6 +17,8 @@ namespace Core.ApplicationServices
         Pet FindPetById(int id);
 
         List<Pet> GetPets();
+        
+        Pet GetPetIncludeOwners(int id);
 
         List<Pet> GetPetsByType(string type);
 

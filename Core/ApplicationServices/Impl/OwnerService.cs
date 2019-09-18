@@ -44,7 +44,7 @@ namespace Core.ApplicationServices.Impl
 
         public Owner UpdateOwner(Owner ownerUpdate)
         {
-            var owner = FindOwnerById(ownerUpdate.id);
+            var owner = FindOwnerById(ownerUpdate.Id);
 
             owner.name = ownerUpdate.name;
             return owner;
@@ -54,7 +54,7 @@ namespace Core.ApplicationServices.Impl
         public Owner Delete(int id)
         {
             var foundOwner = FindOwnerById(id);
-            _ownerRepo.Delete(foundOwner.id);
+            _ownerRepo.Delete(foundOwner.Id);
             return foundOwner;
         }
     }

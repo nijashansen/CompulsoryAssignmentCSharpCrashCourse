@@ -24,17 +24,18 @@
     <setting file="file://$PROJECT_DIR$/PetShop.UI.restAPI/Controllers/PetsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PetShop.UI.restAPI/Controllers/OwnersController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core.Entity/Pet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PetShop.UI.restAPI/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core.Entity/Owner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure.Data/Repositories/PetRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/PetContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure.Data/FakeDB.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PetShop.UI.restAPI/Data/IDbInitializer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PetShop.UI.restAPI/Data/DbInitializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/OwnerRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DomainServices/IPetRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/PetRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/DomainServices/IOwnerRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/ApplicationServices/IPetService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/ApplicationServices/IOwnerService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/DBInitializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/ApplicationServices/Impl/OwnerService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/ApplicationServices/Impl/PetService.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -43,18 +44,22 @@
       <list>
         <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Properties/PublishProfiles/azure.pubxml" />
         <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Data/IDbInitializer.cs" />
-        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Controllers/PetsController.cs" />
-        <option value="$PROJECT_DIR$/Core.Entity/Owner.cs" />
         <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/PetContext.cs" />
         <option value="$PROJECT_DIR$/Core/ApplicationServices/Impl/OwnerService.cs" />
-        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/OwnerRepository.cs" />
-        <option value="$PROJECT_DIR$/Core/ApplicationServices/IPetService.cs" />
-        <option value="$PROJECT_DIR$/Core/ApplicationServices/Impl/PetService.cs" />
-        <option value="$PROJECT_DIR$/Core/DomainServices/IPetRepository.cs" />
         <option value="$PROJECT_DIR$/Infrastructure.Data/Repositories/PetRepository.cs" />
-        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Startup.cs" />
-        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Data/DbInitializer.cs" />
+        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Properties/launchSettings.json" />
+        <option value="$PROJECT_DIR$/Core/DomainServices/IPetRepository.cs" />
         <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/PetRepository.cs" />
+        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Controllers/PetsController.cs" />
+        <option value="$PROJECT_DIR$/Core/ApplicationServices/Impl/PetService.cs" />
+        <option value="$PROJECT_DIR$/Core/ApplicationServices/IPetService.cs" />
+        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Data/DbInitializer.cs" />
+        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Startup.cs" />
+        <option value="$PROJECT_DIR$/Core.Entity/Owner.cs" />
+        <option value="$PROJECT_DIR$/Core.Entity/Pet.cs" />
+        <option value="$PROJECT_DIR$/Core/ApplicationServices/IOwnerService.cs" />
+        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/DBInitializer.cs" />
+        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/OwnerRepository.cs" />
       </list>
     </option>
   </component>
@@ -64,7 +69,8 @@
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -192,7 +198,9 @@
       <workItem from="1568637856390" duration="147000" />
       <workItem from="1568638032212" duration="629000" />
       <workItem from="1568650305100" duration="5435000" />
-      <workItem from="1568714433707" duration="7697000" />
+      <workItem from="1568714433707" duration="8567000" />
+      <workItem from="1568788823049" duration="2892000" />
+      <workItem from="1568792231801" duration="5875000" />
     </task>
     <servers />
   </component>

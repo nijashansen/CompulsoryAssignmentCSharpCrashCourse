@@ -11,12 +11,12 @@ namespace Core.ApplicationServices
 
 
         Owner CreateOwner(Owner owner);
+        
+        Owner FindOwnerById(int id);
+        
+        List<Owner> GetOwners();
 
         Owner UpdateOwner(Owner ownerUpdate);
-
-        Owner FindOwnerById(int id);
-
-        List<Owner> GetOwners();
 
         Owner Delete(int id);
     }

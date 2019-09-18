@@ -6,7 +6,7 @@ namespace Core.Entity
 {
     public class Pet
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         public string Name { get; set; }
 
@@ -19,6 +19,8 @@ namespace Core.Entity
         public string Color { get; set; }
 
         public Owner PrevOwner { get; set; }
+        
+        public List<Owner> PreviousOwners { get; set; }
 
         public double Price { get; set; }
 

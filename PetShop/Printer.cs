@@ -86,7 +86,7 @@ namespace ConsoleApp
 
                         _petService.UpdatePet(new Pet()
                         {
-                            ID = idForEdit,
+                            Id = idForEdit,
                             Name = newName,
                             PrevOwner = NewPrevOwner,
                             Color = NewColor,
@@ -156,12 +156,12 @@ namespace ConsoleApp
             Console.WriteLine("\nList of Pets");
             foreach (var pet in pets)
             {
-                Console.WriteLine("ID: " + pet.ID +
+                Console.WriteLine("ID: " + pet.Id +
                     ", \nName: " + pet.Name +
                     ", \nColor: " + pet.Color +
                     ", \nType: " + pet.TypeOfPet +
                     ", \nPrice: " + pet.Price +
-                    ", \nPrevious Owner: " + pet.PrevOwner.name + ", Id: " + pet.PrevOwner.id +
+                    ", \nPrevious Owner: " + pet.PrevOwner.name + ", Id: " + pet.PrevOwner.Id +
                     ", \nBirthday: " + pet.BirthDay +
                     ", \nSold Date: " + pet.SoldDate + "\n");
             }

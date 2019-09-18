@@ -43,39 +43,10 @@
       </e>
       <e p="CoreFolder" t="Include" />
       <e p="Data" t="Include" />
-      <e p="Infrastructure.Data" t="IncludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="FakeDB.cs" t="Include" />
-        <e p="Infrastructure.Data.csproj" t="IncludeRecursive" />
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
-            <e p="netcoreapp2.1" t="Include">
-              <e p="Infrastructure.Data.AssemblyInfo.cs" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="Repositories" t="Include">
-          <e p="OwnerRepository.cs" t="Include" />
-          <e p="PetRepository.cs" t="Include" />
-        </e>
-      </e>
       <e p="packages" t="ExcludeRecursive" />
-      <e p="PetShop" t="IncludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="ConsoleApp2017.csproj" t="IncludeRecursive" />
-        <e p="IPrinter.cs" t="Include" />
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
-            <e p="netcoreapp2.1" t="Include">
-              <e p="ConsoleApp2017.AssemblyInfo.cs" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="Printer.cs" t="Include" />
-        <e p="Program.cs" t="Include" />
-      </e>
       <e p="PetShop.Infrastructure.SQL" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
+        <e p="DbInitializer.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp2.2" t="Include">
@@ -97,10 +68,6 @@
         <e p="Controllers" t="Include">
           <e p="OwnersController.cs" t="Include" />
           <e p="PetsController.cs" t="Include" />
-        </e>
-        <e p="Data" t="Include">
-          <e p="DbInitializer.cs" t="Include" />
-          <e p="IDbInitializer.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

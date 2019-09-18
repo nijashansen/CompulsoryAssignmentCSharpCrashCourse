@@ -25,7 +25,15 @@ namespace PetShop.Infrastructure.SQL.Repositories
         
         public Pet ReadPetById(int id)
         {
-            return _context.pets.FirstOrDefault(prop => prop.ID == id);
+            return _context.pets.Include(pet => pet.PrevOwner).FirstOrDefault(prop => prop.Id == id);
+        }
+
+        public Pet ReadPetByIdIncludingOwner(int id)
+        {
+            return _context.pets
+                .Where(p => p.Id == id)
+                .Include(p => p.PrevOwner)
+                .FirstOrDefault();
         }
 
         public IEnumerable<Pet> ReadPets()
@@ -40,16 +48,11 @@ namespace PetShop.Infrastructure.SQL.Repositories
         
         public Pet Delete(int petToDelete)
         {
-            var toDelete = _context.Remove(new Pet {ID = petToDelete}).Entity;
+            var petRemove = _context.Remove<Pet>(new Pet() {Id = petToDelete}).Entity;
             _context.SaveChanges();
-            return toDelete;
+            return petRemove;
         }
 
-        public Pet ReadyByIdIncludeOwners(int id)
-        {
-            return _context.pets
-                .Include(pet =>  pet.PrevOwner).ToList()
-                .FirstOrDefault(pet => pet.ID == id);
-        }
+        
     }
 }
