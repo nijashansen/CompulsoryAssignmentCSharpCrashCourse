@@ -40,6 +40,8 @@
         </e>
         <e p="Owner.cs" t="Include" />
         <e p="Pet.cs" t="Include" />
+        <e p="PetOwner.cs" t="Include" />
+        <e p="PetTypes.cs" t="Include" />
       </e>
       <e p="CoreFolder" t="Include" />
       <e p="Data" t="Include" />
@@ -76,6 +78,7 @@
             </e>
           </e>
         </e>
+        <e p="PetShop.db" t="Include" />
         <e p="PetShop.UI.restAPI.csproj" t="IncludeRecursive" />
         <e p="PetShopApp.db" t="Include" />
         <e p="Program.cs" t="Include" />

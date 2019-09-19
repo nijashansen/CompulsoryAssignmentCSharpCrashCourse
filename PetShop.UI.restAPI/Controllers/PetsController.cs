@@ -13,91 +13,60 @@ namespace PetShop.UI.restAPI.Controllers
     [ApiController]
     public class PetsController : ControllerBase
     {
-        private readonly IPetService _petService;
+        private IPetService _petService;
 
         public PetsController(IPetService petService)
         {
             _petService = petService;
         }
 
-        // GET api/pets
+        // GET api/Pets
         [HttpGet]
         public ActionResult<IEnumerable<Pet>> Get()
         {
-            try
-            {
-                return _petService.GetPets();
-            }
-            catch (Exception e)
-            {
-                return BadRequest($"Could not get any pets");
-            }       
+            return Ok(_petService.GetPets());
         }
 
-        // GET api/pets/5
         [HttpGet("{id}")]
         public ActionResult<Pet> Get(int id)
         {
-            var pet = _petService.FindPetById(id);
-            if (pet == null || id <= 0)
-            {
-                return StatusCode(406, "Pet with id: " + id + ", Was not found.");
-            }
-            return pet;
-            
+            return Ok(_petService.GetPet(id));
         }
 
-        // POST api/pets
+        // POST api/pet
         [HttpPost]
         public ActionResult<Pet> Post([FromBody] Pet pet)
         {
-            if (string.IsNullOrEmpty(pet.Name))
+            try
             {
-                return BadRequest("Name is Required to create a Pet");
-            }
-            else if (pet.PrevOwner == null)
+                return Ok(_petService.CreatePet(pet));
+            }catch(Exception e)
             {
-                return BadRequest("Previous Owner is Required to create a Pet");
+                return BadRequest(e.Message);
             }
-
-
-            return _petService.CreatePet(pet);
         }
-        
 
-
-        // PUT api/values/5
+        // PUT api/pet/5
         [HttpPut("{id}")]
-        public ActionResult<Pet> Put(int id, [FromBody] Pet pet)
+        public ActionResult<Pet> Put(int id, [FromBody] Pet updatedPet)
         {
-            if (id < 1 || id != pet.Id)
-            {
-                return BadRequest("Parameter id, and pet id must be the same!");
-            }
-            else if (pet.PrevOwner == null)
-            {
-                return BadRequest("Please enter an owner with an id");
-            }
-            else if (pet.PrevOwner.Id != _petService.getOwner(pet).Id)
-            {
-                return BadRequest("Previous Owner Parameter id, and Previous owner id, must be the same");
-            }
-            return Ok(_petService.UpdatePet(pet));
+            Pet petToUpdate = _petService.GetPet(id);
+            return Ok(_petService.UpdatePet(petToUpdate, updatedPet));
         }
 
-        // DELETE api/pets/5
+        // DELETE api/pet/5
         [HttpDelete("{id}")]
         public ActionResult<Pet> Delete(int id)
         {
-            var pet = _petService.FindPetById(id);
+            Pet pet = _petService.GetPet(id);
             if (pet == null)
             {
-                return StatusCode(404, "Could not find pet with id: " + id);
+                return BadRequest("Could not find pet to delete");
             }
-
-            _petService.Delete(id);
-            return Ok("Pet with id: " + id + ", Was deleted");
+            else
+            {
+                return Ok(_petService.DeletePet(pet));
+            }
         }
-
     }
 }

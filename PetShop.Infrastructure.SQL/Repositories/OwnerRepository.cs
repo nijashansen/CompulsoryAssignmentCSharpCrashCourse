@@ -15,35 +15,39 @@ namespace PetShop.Infrastructure.SQL.Repositories
         {
             _context = context;
         }
-
-        public Owner CreateOwner(Owner owner)
+        public Owner AddOwner(Owner owner)
         {
-            var ownerToCreate = _context.owners.Add(owner).Entity;
+            _context.Attach(owner).State = EntityState.Added;
             _context.SaveChanges();
-            return ownerToCreate;
+            return owner;
         }
 
-
-        public Owner ReadOwnerById(int id)
+        public Owner DeleteOwner(Owner owner)
         {
-            return _context.owners.FirstOrDefault(prop => prop.Id == id);
+            _context.Remove(owner);
+            _context.SaveChanges();
+            return owner;
+        }
+
+        public Owner ReadOwner(int id)
+        {
+            return _context.Owners
+                .Include(o => o.petHistory)
+                .ThenInclude(po => po.Pet)
+                .FirstOrDefault(o => o.id == id);
         }
 
         public IEnumerable<Owner> ReadOwners()
         {
-            return _context.owners.Include(owner => owner.Pet).ToList();
+            return _context.Owners.
+                Include(o => o.petHistory)
+                .ThenInclude(po => po.Pet)
+                .ToList();
         }
 
-        public Owner UpdateOwner(Owner ownerToBeUpdated)
+        public Owner UpdateOwner(Owner toBeUpdated, Owner updatedOwner)
         {
             throw new NotImplementedException();
-        }
-        
-        public Owner Delete(int ownerToDelete)
-        {
-            var toDelete = _context.Remove(new Owner { Id = ownerToDelete }).Entity;
-            _context.SaveChanges();
-            return toDelete;
         }
     }
 }

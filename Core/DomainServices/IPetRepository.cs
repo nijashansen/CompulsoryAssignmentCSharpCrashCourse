@@ -7,16 +7,10 @@ namespace Core.DomainServices
 {
     public interface IPetRepository
     {
-        Pet CreatePet(Pet pet);
-
-        Pet ReadPetById(int id);
-        
-        Pet ReadPetByIdIncludingOwner(int id);
-
         IEnumerable<Pet> ReadPets();
-
-        Pet UpdatePet(Pet petToBeUpdated);
-
-        Pet Delete(int petToDelete);
+        Pet CreatePet(Pet pet);
+        Pet DeletePet(Pet pet);
+        Pet UpdatePet(Pet petToUpdate, Pet updatedPet);
+        Pet readPet(int id);
     }
 }

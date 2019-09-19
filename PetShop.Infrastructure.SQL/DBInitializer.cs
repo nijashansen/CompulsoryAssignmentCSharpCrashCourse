@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Core.Entity;
 
 namespace PetShop.Infrastructure.SQL
@@ -7,40 +8,71 @@ namespace PetShop.Infrastructure.SQL
     {
         public static void Initialize(PetShopContext ctx)
         {
-            ctx.Database.EnsureDeleted();
-            ctx.Database.EnsureCreated();
+            Pet pet1 = new Pet
+            {
+                name = "Felix",
+                type = PetTypes.Cat,
+                birthDate = DateTime.Now,
+                soldDate = DateTime.Now.AddYears(1),
+                color = "Black",
+                price = 275,
+                ownersHistory = new List<PetOwner>()
+            };
+            Pet pet2 = new Pet
+            {
+                name = "Steggersaurus",
+                type = PetTypes.Dinosaurus,
+                birthDate = DateTime.Now.AddYears(-35),
+                soldDate = DateTime.Now.AddYears(1).AddDays(24),
+                color = "SteggerColor",
+                price = 550,
+                ownersHistory = new List<PetOwner>()
+            };
+            Owner owner1 = new Owner
+            {
+                firstName = "Post",
+                lastName = "Malone",
+                address = "Melonvej 24",
+                petHistory = new List<PetOwner>()
+            };
+            Owner owner2 = new Owner
+            {
+                firstName = "Daft",
+                lastName = "Punk",
+                address = "Elektronik Musikvej 1337",
+                petHistory = new List<PetOwner>()
+            };
 
-            var pet1 = ctx.pets.Add(new Pet()
+
+
+            owner1 = ctx.Owners.Add(owner1).Entity;
+            owner2 = ctx.Owners.Add(owner2).Entity;
+
+            PetOwner PetOwner1 = new PetOwner
             {
-                BirthDay = DateTime.Today,
-                Color = "Grå",
-                Name = "BlopFisk",
-                Price = 2000.00,
-                SoldDate = DateTime.Now.AddYears(1),
-                TypeOfPet = "Fisk"
-            }).Entity;
-            
-            var pet2 = ctx.pets.Add(new Pet()
+                Owner = owner1
+            };
+
+            PetOwner PetOwner2 = new PetOwner
             {
-                BirthDay = DateTime.Today,
-                Color = "Blå",
-                Name = "PuffeFisk",
-                Price = 2000.00,
-                SoldDate = DateTime.Now.AddYears(1),
-                TypeOfPet = "Fisk"
-            }).Entity;
-            
-            ctx.owners.Add(new Owner()
+                Owner = owner2
+            };
+
+            PetOwner PetOwner3 = new PetOwner
             {
-                name = "Olga",
-                Pet = pet1
-            });
-            
-            ctx.owners.Add(new Owner()
-            {
-                name = "Poul",
-                Pet = pet2
-            });
+                Owner = owner1
+            };
+
+            pet1.ownersHistory.Add(PetOwner1);
+            pet1.ownersHistory.Add(PetOwner2);
+            pet2.ownersHistory.Add(PetOwner3);
+
+            pet1 = ctx.Pets.Add(pet1).Entity;
+            pet1 = ctx.Pets.Add(pet2).Entity;
+
+
+
+            ctx.SaveChanges();
         }
     }
 }

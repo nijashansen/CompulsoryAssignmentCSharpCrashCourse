@@ -15,44 +15,41 @@ namespace PetShop.Infrastructure.SQL.Repositories
         {
             _context = context;
         }
-
         public Pet CreatePet(Pet pet)
         {
-            var petToCreate = _context.pets.Add(pet).Entity;
+            _context.Attach(pet).State = EntityState.Added;
             _context.SaveChanges();
-            return petToCreate;
-        }
-        
-        public Pet ReadPetById(int id)
-        {
-            return _context.pets.Include(pet => pet.PrevOwner).FirstOrDefault(prop => prop.Id == id);
+            return pet;
         }
 
-        public Pet ReadPetByIdIncludingOwner(int id)
+        public Pet DeletePet(Pet pet)
         {
-            return _context.pets
-                .Where(p => p.Id == id)
-                .Include(p => p.PrevOwner)
-                .FirstOrDefault();
+            //Pet petRemoved = _context.Remove(new Pet { id = pet.id}).Entity;
+            _context.Remove(pet);
+            _context.SaveChanges();
+            return pet;
+        }
+
+        public Pet readPet(int id)
+        {
+            return _context.Pets
+                .Include(o => o.ownersHistory)
+                .ThenInclude(po => po.Owner)
+                .FirstOrDefault(p => p.id == id);
         }
 
         public IEnumerable<Pet> ReadPets()
         {
-            return _context.pets.Include(p => p.PrevOwner).ToList();
+            return _context.Pets
+                .Include(o => o.ownersHistory)
+                .ThenInclude(po => po.Owner)
+                .ToList();
         }
 
-        public Pet UpdatePet(Pet petToBeUpdated)
+        public Pet UpdatePet(Pet petToUpdate, Pet updatedPet)
         {
             throw new NotImplementedException();
         }
-        
-        public Pet Delete(int petToDelete)
-        {
-            var petRemove = _context.Remove<Pet>(new Pet() {Id = petToDelete}).Entity;
-            _context.SaveChanges();
-            return petRemove;
-        }
 
-        
-    }
+    } 
 }

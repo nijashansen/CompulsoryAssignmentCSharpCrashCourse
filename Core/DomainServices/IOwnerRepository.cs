@@ -7,16 +7,10 @@ namespace Core.DomainServices
 {
     public interface IOwnerRepository
     {
-
-        Owner CreateOwner(Owner owner);
-
-        Owner ReadOwnerById(int id);
-
+        Owner AddOwner(Owner owner);
+        Owner DeleteOwner(Owner owner);
         IEnumerable<Owner> ReadOwners();
-
-        Owner UpdateOwner(Owner ownerToBeUpdated);
-
-        Owner Delete(int ownerToDelete);
-
+        Owner ReadOwner(int id);
+        Owner UpdateOwner(Owner toBeUpdated, Owner updatedOwner);
     }
 }

@@ -7,28 +7,14 @@ namespace Core.ApplicationServices
 {
     public interface IPetService
     {
-        Pet NewPet(string name, Owner prevOwner, string color, string type, string birthday, string price, string soldDate);
-
-
-        Pet CreatePet(Pet pet);
-
-        Pet UpdatePet(Pet petUpdate);
-
-        Pet FindPetById(int id);
-
         List<Pet> GetPets();
-        
-        Pet GetPetIncludeOwners(int id);
-
-        List<Pet> GetPetsByType(string type);
-
-        List<Pet> Get5CheapestPets();
-
-        List<Pet> GetPetsOrderedByPrice();
-
-        Owner getOwner(Pet pet);
-
-        Pet Delete(int id);
+        Pet CreatePet(Pet pet);
+        Pet DeletePet(Pet pet);
+        Pet UpdatePet(Pet petToUpdate, Pet updatedPet);
+        Pet GetPet(int id);
+        List<Pet> GetPetsByType(PetTypes type);
+        List<Pet> GetPetsByOrderedPrice();
+        List<Pet> GetFiveCheapestPets();
         
     }
 }

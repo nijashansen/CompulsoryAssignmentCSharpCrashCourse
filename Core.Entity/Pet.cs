@@ -6,25 +6,13 @@ namespace Core.Entity
 {
     public class Pet
     {
-        public int Id { get; set; }
-
-        public string Name { get; set; }
-
-        public string TypeOfPet { get; set; }
-
-        public DateTime BirthDay { get; set; }
-
-        public DateTime SoldDate { get; set; }
-
-        public string Color { get; set; }
-
-        public Owner PrevOwner { get; set; }
-        
-        public List<Owner> PreviousOwners { get; set; }
-
-        public double Price { get; set; }
-
-
-
+        public int id { get; set; }
+        public string name { get; set; }
+        public PetTypes type {get; set;}
+        public DateTime birthDate { get; set; }
+        public DateTime soldDate { get; set; }
+        public string color { get; set; }
+        public double price { get; set; }
+        public List<PetOwner> ownersHistory { get; set; }
     }
 }

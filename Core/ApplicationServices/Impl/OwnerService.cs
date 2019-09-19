@@ -15,47 +15,30 @@ namespace Core.ApplicationServices.Impl
         {
             _ownerRepo = ownerRepository;
         }
-
-        public Owner NewOwner(string name)
-        {
-            var owner = new Owner()
-            {
-                name = name,
-            };
-
-            return owner;
-        }
-
+        
         public Owner CreateOwner(Owner owner)
+        { 
+            return _ownerRepo.AddOwner(owner);
+        }
+        
+        public Owner DeleteOwner(Owner owner) 
+        { 
+            return _ownerRepo.DeleteOwner(owner);
+        }
+        
+        public List<Owner> GetAllOwners() 
         {
-            return _ownerRepo.CreateOwner(owner);
+            return _ownerRepo.ReadOwners().ToList(); 
         }
 
-        public Owner FindOwnerById(int id)
-        {
-            return _ownerRepo.ReadOwnerById(id);
+        public Owner GetOwner(int id) 
+        { 
+            return _ownerRepo.ReadOwner(id);
         }
 
-        public List<Owner> GetOwners()
-        {
-            return _ownerRepo.ReadOwners().ToList();
-        }
-
-
-        public Owner UpdateOwner(Owner ownerUpdate)
-        {
-            var owner = FindOwnerById(ownerUpdate.Id);
-
-            owner.name = ownerUpdate.name;
-            return owner;
-        }
-
-
-        public Owner Delete(int id)
-        {
-            var foundOwner = FindOwnerById(id);
-            _ownerRepo.Delete(foundOwner.Id);
-            return foundOwner;
+        public Owner UpdateOwner(Owner toBeUpdated, Owner updatedOwner) 
+        { 
+            return _ownerRepo.UpdateOwner(toBeUpdated, updatedOwner);
         }
     }
 }

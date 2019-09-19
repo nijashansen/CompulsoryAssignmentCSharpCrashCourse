@@ -16,30 +16,39 @@ namespace Core.ApplicationServices.Impl
             _petRepo = petRepository;
         }
 
-        public Pet NewPet(string name, Owner prevOwner, string Color, string type, string birthday, string price, string soldDate)
-        {
-            var pet = new Pet()
-            {
-                Name = name,
-                PrevOwner = prevOwner,
-                Color = Color,
-                TypeOfPet = type,
-                BirthDay = DateTime.Parse(birthday),
-                Price = double.Parse(price),
-                SoldDate = DateTime.Parse(soldDate)
-            };
-
-            return pet;
-        }
-
         public Pet CreatePet(Pet pet)
         {
             return _petRepo.CreatePet(pet);
         }
 
-        public Pet FindPetById(int id)
+        public Pet DeletePet(Pet pet)
         {
-            return _petRepo.ReadPetById(id);
+
+            return _petRepo.DeletePet(pet);
+        }
+
+        public List<Pet> GetFiveCheapestPets()
+        {
+            List<Pet> fiveCheapestPets = new List<Pet>();
+            IEnumerable<Pet> pets = _petRepo.ReadPets().OrderBy(pet => pet.price);
+            List<Pet> petsordered = pets.ToList();
+            foreach (Pet pet in petsordered)
+            {
+                if (fiveCheapestPets.Count == 5)
+                {
+                    break;
+                }
+                else
+                {
+                    fiveCheapestPets.Add(pet);
+                }
+            }
+            return fiveCheapestPets;
+        }
+
+        public Pet GetPet(int id)
+        {
+            return _petRepo.readPet(id);
         }
 
         public List<Pet> GetPets()
@@ -47,61 +56,32 @@ namespace Core.ApplicationServices.Impl
             return _petRepo.ReadPets().ToList();
         }
 
-        public Pet GetPetIncludeOwners(int id)
+        public List<Pet> GetPetsByOrderedPrice()
         {
-            var pet = _petRepo.ReadPetByIdIncludingOwner(id);
-            return pet;
+            IEnumerable<Pet> pets = _petRepo.ReadPets().OrderBy(pet => pet.price);
+
+            return pets.ToList();
         }
 
-        public List<Pet> GetPetsByType(string type)
+        public List<Pet> GetPetsByType(PetTypes type)
         {
-            var list = _petRepo.ReadPets();
-
-            var sortedList = list.Where(pet => pet.TypeOfPet.Equals(type));
-            return sortedList.ToList();
+            List<Pet> petsByType = new List<Pet>();
+            List<Pet> pets = _petRepo.ReadPets().ToList();
+            foreach (Pet pet in pets)
+            {
+                if (type == pet.type)
+                {
+                    petsByType.Add(pet);
+                }
+            }
+            return petsByType;
         }
 
-        public List<Pet> Get5CheapestPets()
+        public Pet UpdatePet(Pet petToUpdate, Pet updatedPet)
         {
-            var list = GetPetsOrderedByPrice();
-
-            var sortedList = list.OrderBy(pet => pet.Price).Take(5);
-            return sortedList.ToList();
+            return _petRepo.UpdatePet(petToUpdate, updatedPet);
         }
 
-        public List<Pet> GetPetsOrderedByPrice()
-        {
-            var list = _petRepo.ReadPets();
-
-            var orderedList = list.OrderBy(pet => pet.Price);
-            return orderedList.ToList();
-        }
-        
-        public Pet UpdatePet(Pet petUpdate)
-        {
-            var pet = FindPetById(petUpdate.Id);
-
-            pet.Name = petUpdate.Name;
-            pet.PrevOwner = petUpdate.PrevOwner;
-            pet.Color = petUpdate.Color;
-            pet.TypeOfPet = petUpdate.TypeOfPet;
-            pet.BirthDay = petUpdate.BirthDay; 
-            pet.Price = petUpdate.Price;
-            pet.SoldDate = petUpdate.SoldDate;
-            return pet;
-        }
-
-        public Owner getOwner(Pet pet)
-        {
-            var pet2 = FindPetById(pet.Id);
-
-            return pet2.PrevOwner;
-        }
-
-        public Pet Delete(int id)
-        {
-            return _petRepo.Delete(id);
-        }
 
     }
 }

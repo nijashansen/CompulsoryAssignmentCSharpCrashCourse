@@ -13,81 +13,48 @@ namespace PetShop.UI.restAPI.Controllers
     [ApiController]
     public class OwnersController : ControllerBase
     {
-        private readonly IOwnerService _ownerService;
+        private IOwnerService _ownerService;
 
         public OwnersController(IOwnerService ownerService)
         {
             _ownerService = ownerService;
         }
 
-        // GET: api/Owners
+        // GET api/pet
         [HttpGet]
         public ActionResult<IEnumerable<Owner>> Get()
         {
-            try
-            {
-                return _ownerService.GetOwners();
-            }
-            catch (Exception)
-            {
-                return BadRequest("No Owners Was Found");
-            }
+            return _ownerService.GetAllOwners();
         }
 
-        // GET: api/Owners/5
+        // GET api/pet/5
         [HttpGet("{id}")]
         public ActionResult<Owner> Get(int id)
         {
-            var owner = _ownerService.FindOwnerById(id);
-            if (id <= 0 || owner == null)
-            {
-                return BadRequest("ID: " + id + ", does not exist\n" +
-                    "Please enter a valid id");
-            }
-            return _ownerService.FindOwnerById(id);
+            return _ownerService.GetOwner(id);
         }
 
-        // POST: api/Owners
+        // POST api/pet
         [HttpPost]
-        public ActionResult<Owner> Post([FromBody] Owner owner)
+        public void Post([FromBody] Owner owner)
         {
-            if (string.IsNullOrEmpty(owner.name))
-            {
-                return BadRequest("Name is Required to create a Owner");
-            }
-            
-
-            return _ownerService.CreateOwner(owner);
+            _ownerService.CreateOwner(owner);
         }
 
-        // PUT: api/Owners/5
+        // PUT api/pet/5
         [HttpPut("{id}")]
-        public ActionResult<Owner> Put(int id, [FromBody] Owner owner)
+        public void Put(int id, [FromBody] Owner updatedOwner)
         {
-            if (id < 1 || id != owner.Id)
-            {
-                return BadRequest("Parameter id, and owner id must be the same!\n"
-                    + "Please enter a owner with id, and name");
-            }
-            else if (owner.name == null)
-            {
-                return BadRequest("Owner has to have a name");
-            }
-            return Ok(_ownerService.UpdateOwner(owner));
+            Owner toBeUpdated = _ownerService.GetOwner(id);
+            _ownerService.UpdateOwner(toBeUpdated, updatedOwner);
         }
 
-        // DELETE: api/Owners/5
+        // DELETE api/pet/5
         [HttpDelete("{id}")]
-        public ActionResult<Owner> Delete(int id)
+        public void Delete(int id)
         {
-            var owner = _ownerService.FindOwnerById(id);
-            if (owner == null)
-            {
-                return StatusCode(406, "Could not find owner with id: " + id);
-            }
-
-            _ownerService.Delete(id);
-            return Ok("Owner with id: " + id + ", Was deleted");
+            Owner owner = _ownerService.GetOwner(id);
+            _ownerService.DeleteOwner(owner);
         }
     }
 }
