@@ -90,7 +90,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.PetShop.UI.restAPI">
+  <component name="RunManager" selected="Azure - Publish Web App.Publish PetShop.UI.restAPI to Azure">
     <configuration name="Publish PetShop.UI.restAPI to Azure" type="AzureDotNetWebAppPublish" factoryName="Azure Web App" temporary="true">
       <option name="AZURE_WEB_APP_PROJECT" value="$PROJECT_DIR$/PetShop.UI.restAPI/PetShop.UI.restAPI.csproj" />
       <option name="AZURE_WEB_APP_SUBSCRIPTION_ID" value="ed8f0f84-a848-43bd-a6a4-8f6b32f49817" />
@@ -208,6 +208,7 @@
       <workItem from="1568788823049" duration="2892000" />
       <workItem from="1568792231801" duration="5875000" />
       <workItem from="1568873737344" duration="3169000" />
+      <workItem from="1569319395513" duration="1245000" />
     </task>
     <servers />
   </component>
