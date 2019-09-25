@@ -8,10 +8,10 @@ namespace Core.DomainServices
     public interface IOwnerRepository
     {
         Owner AddOwner(Owner owner);
-        Owner DeleteOwner(Owner owner);
-        IEnumerable<Owner> ReadOwners(Filter filter = null);
+        Owner DeleteOwner(int id);
+        FilteringList<Owner> ReadOwners(Filter filter);
         Owner ReadOwner(int id);
-        Owner UpdateOwner(Owner toBeUpdated, Owner updatedOwner);
+        Owner UpdateOwner(Owner toBeUpdated);
         int Count();
     }
 }

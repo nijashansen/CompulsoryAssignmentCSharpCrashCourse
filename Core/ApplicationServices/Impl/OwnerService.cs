@@ -22,12 +22,12 @@ namespace Core.ApplicationServices.Impl
             return _ownerRepo.AddOwner(owner);
         }
         
-        public Owner DeleteOwner(Owner owner) 
+        public Owner DeleteOwner(int id) 
         { 
-            return _ownerRepo.DeleteOwner(owner);
+            return _ownerRepo.DeleteOwner(id);
         }
 
-        public List<Owner> GetFilteredOwners(Filter filter)
+        public FilteringList<Owner> GetOwners(Filter filter)
         {
             if (filter.CurrentPage < 0 || filter.InfoPrPage < 0)
             {
@@ -38,12 +38,7 @@ namespace Core.ApplicationServices.Impl
             {
                 throw new InvalidDataException("Index Out Of Bounds, CurrentPage is to high");
             }
-            return _ownerRepo.ReadOwners(filter).ToList();
-        }
-
-        public List<Owner> GetAllOwners() 
-        {
-            return _ownerRepo.ReadOwners().ToList(); 
+            return _ownerRepo.ReadOwners(filter);
         }
 
         public Owner GetOwner(int id) 
@@ -51,9 +46,15 @@ namespace Core.ApplicationServices.Impl
             return _ownerRepo.ReadOwner(id);
         }
 
-        public Owner UpdateOwner(Owner toBeUpdated, Owner updatedOwner) 
+        public Owner UpdateOwner(Owner toBeUpdated) 
         { 
-            return _ownerRepo.UpdateOwner(toBeUpdated, updatedOwner);
+            var owner = GetOwner(toBeUpdated.id);
+            owner.firstName = toBeUpdated.firstName;
+            owner.lastName = toBeUpdated.lastName;
+            owner.address = toBeUpdated.address;
+            owner.petHistory = toBeUpdated.petHistory;
+
+            return _ownerRepo.UpdateOwner(owner);
         }
     }
 }

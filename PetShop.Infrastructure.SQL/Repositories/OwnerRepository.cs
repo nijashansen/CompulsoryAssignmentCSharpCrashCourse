@@ -22,11 +22,18 @@ namespace PetShop.Infrastructure.SQL.Repositories
             return owner;
         }
 
-        public Owner DeleteOwner(Owner owner)
+        public Owner DeleteOwner(int id)
         {
-            _context.Remove(owner);
+            var entityRemoved = _context.Remove(new Owner { id = id }).Entity;
             _context.SaveChanges();
-            return owner;
+            return entityRemoved;
+
+            //Øverste sender kun 1 request til DB, mens den neden under sender 2.
+
+            /*var removing = _context.pets.FirstOrDefault(p => p.ID == pet.ID);
+            _context.Remove(removing);
+            _context.SaveChanges();
+            return removing;*/
         }
 
         public Owner ReadOwner(int id)
@@ -37,29 +44,45 @@ namespace PetShop.Infrastructure.SQL.Repositories
                 .FirstOrDefault(o => o.id == id);
         }
 
-        public IEnumerable<Owner> ReadOwners(Filter filter)
+        public FilteringList<Owner> ReadOwners(Filter filter)
         {
-            if (filter == null)
-            {
-                return _context.Owners.
-                                Include(o => o.petHistory)
-                                .ThenInclude(po => po.Pet).ToList();
-            }
+            var filteredList = new FilteringList<Owner>();
 
-            return _context.Owners.Include(o => o.petHistory)
-                .ThenInclude(po => po.Pet)
-                .Skip((filter.CurrentPage - 1) * filter.InfoPrPage)
-                .Take(filter.InfoPrPage).ToList();
+            if (filter != null && filter.CurrentPage > 0 && filter.InfoPrPage > 0)
+            {
+                filteredList.List = _context.Owners
+                    .Skip((filter.CurrentPage - 1) * filter.InfoPrPage)
+                    .Take(filter.InfoPrPage)
+                    .OrderBy(o => o.id)
+                    .Include(p => p.petHistory)
+                    .ThenInclude(po => po.Pet)
+                    .ToList();
+                return filteredList;
+            }
+            filteredList.List = _context.Owners
+                .Include(p => p.petHistory)
+                .ThenInclude(po => po.Pet);
+            filteredList.Count = filteredList.List.Count();
+            return filteredList;
         }
 
-        public Owner UpdateOwner(Owner toBeUpdated, Owner updatedOwner)
+        public Owner UpdateOwner(Owner toBeUpdated)
         {
-            _context.Attach(toBeUpdated).State = EntityState.Modified;
-            _context.Entry(toBeUpdated).Reference(o => o.petHistory).IsModified = true;
+            if (toBeUpdated != null)
+            {
+                _context.Attach(toBeUpdated).State = EntityState.Modified;
+                //_context.Entry(petUpdate).Collection(p => p.ownersHistory).IsModified = true;
+            }
+            var petOwners = new List<PetOwner>(toBeUpdated.petHistory ?? new List<PetOwner>());
+            _context.PetOwners.RemoveRange(
+                _context.PetOwners.Where(p => p.PetId == toBeUpdated.id)
+            );
+            foreach (var po in petOwners)
+            {
+                _context.Entry(po).State = EntityState.Added;
+            }
             _context.SaveChanges();
-
-            updatedOwner = toBeUpdated;
-            return updatedOwner;
+            return toBeUpdated;
         }
 
         public int Count()

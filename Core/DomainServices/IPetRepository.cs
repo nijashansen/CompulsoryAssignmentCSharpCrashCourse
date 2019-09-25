@@ -9,8 +9,8 @@ namespace Core.DomainServices
     {
         IEnumerable<Pet> ReadPets(Filter filter = null);
         Pet CreatePet(Pet pet);
-        Pet DeletePet(Pet pet);
-        Pet UpdatePet(Pet petToUpdate, Pet updatedPet);
+        Pet DeletePet(int id);
+        Pet UpdatePet(Pet petToUpdate);
         Pet readPet(int id);
         int Count();
     }

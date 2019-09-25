@@ -28,13 +28,33 @@ namespace PetShop.UI.restAPI.Controllers
             {
                 if (filter.CurrentPage == 0 && filter.InfoPrPage == 0)
                 {
-                    return Ok(_ownerService.GetAllOwners());
+                    var list = _ownerService.GetOwners(null);
+                    var newList = new List<Owner>();
+                    foreach (var owner in list.List)
+                    {
+                        newList.Add(new Owner()
+                        {
+                            id = owner.id,
+                            firstName = owner.firstName,
+                            lastName = owner.lastName,
+                            address = owner.address,
+                            petHistory = owner.petHistory
+                        });
+                    }
+                    var newFilteredList = new FilteringList<Owner>();
+                    newFilteredList.List = newList;
+                    newFilteredList.Count = list.Count;
+                    return Ok(newFilteredList);
                 }
-                return Ok(_ownerService.GetFilteredOwners(filter));
+
+                var fl = _ownerService.GetOwners(filter);
+
+                return Ok(fl);
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);
+
+                return StatusCode(500, e.Message);
             }
             
         }
@@ -48,25 +68,35 @@ namespace PetShop.UI.restAPI.Controllers
 
         // POST api/pet
         [HttpPost]
-        public void Post([FromBody] Owner owner)
+        public ActionResult<Owner> Post([FromBody] Owner owner)
         {
-            _ownerService.CreateOwner(owner);
+            return _ownerService.CreateOwner(owner);
         }
 
         // PUT api/pet/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Owner updatedOwner)
+        public ActionResult<Owner> Put(int id, [FromBody] Owner owner)
         {
-            Owner toBeUpdated = _ownerService.GetOwner(id);
-            _ownerService.UpdateOwner(toBeUpdated, updatedOwner);
+            if (id < 1 || id != owner.id)
+            {
+                return BadRequest("Parameter id and owner id must be the same");
+            }
+
+            _ownerService.UpdateOwner(owner);
+            return Ok();
         }
 
         // DELETE api/pet/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ActionResult<Owner> Delete(int id)
         {
-            Owner owner = _ownerService.GetOwner(id);
-            _ownerService.DeleteOwner(owner);
+            Owner owner = _ownerService.DeleteOwner(id);
+            if (owner == null)
+            {
+                return BadRequest("Parameter id must match owner id");
+            }
+            return Ok("Owner with id: " + id + " Was deleted");
+            
         }
     }
 }

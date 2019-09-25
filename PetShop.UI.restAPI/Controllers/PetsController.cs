@@ -59,24 +59,29 @@ namespace PetShop.UI.restAPI.Controllers
 
         // PUT api/pet/5
         [HttpPut("{id}")]
-        public ActionResult<Pet> Put(int id, [FromBody] Pet updatedPet)
+        public ActionResult<Pet> Put(int id, [FromBody] Pet pet)
         {
-            Pet petToUpdate = _petService.GetPet(id);
-            return Ok(_petService.UpdatePet(petToUpdate, updatedPet));
+            if (id < 1 || id != pet.id)
+            {
+                return BadRequest("Parameter id and pet id must be the same");
+            }
+
+            _petService.UpdatePet(pet);
+            return Ok();
         }
 
         // DELETE api/pet/5
         [HttpDelete("{id}")]
         public ActionResult<Pet> Delete(int id)
         {
-            Pet pet = _petService.GetPet(id);
+            Pet pet = _petService.DeletePet(id);
             if (pet == null)
             {
                 return BadRequest("Could not find pet to delete");
             }
             else
             {
-                return Ok(_petService.DeletePet(pet));
+                return Ok("Pet with id: " + pet.id + " Has been deleted");
             }
         }
     }

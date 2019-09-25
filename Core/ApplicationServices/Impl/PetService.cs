@@ -22,10 +22,10 @@ namespace Core.ApplicationServices.Impl
             return _petRepo.CreatePet(pet);
         }
 
-        public Pet DeletePet(Pet pet)
+        public Pet DeletePet(int id)
         {
 
-            return _petRepo.DeletePet(pet);
+            return _petRepo.DeletePet(id);
         }
 
         public List<Pet> GetFiveCheapestPets()
@@ -93,9 +93,18 @@ namespace Core.ApplicationServices.Impl
             return petsByType;
         }
 
-        public Pet UpdatePet(Pet petToUpdate, Pet updatedPet)
+        public Pet UpdatePet(Pet petToUpdate)
         {
-            return _petRepo.UpdatePet(petToUpdate, updatedPet);
+            var pet = GetPet(petToUpdate.id);
+            pet.name = petToUpdate.name;
+            pet.type = petToUpdate.type;
+            pet.birthDate = petToUpdate.birthDate;
+            pet.soldDate = petToUpdate.soldDate;
+            pet.color = petToUpdate.color;
+            pet.price = petToUpdate.price;
+            pet.ownersHistory = petToUpdate.ownersHistory;
+
+            return _petRepo.UpdatePet(pet);
         }
 
 

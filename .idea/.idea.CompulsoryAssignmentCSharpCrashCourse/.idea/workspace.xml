@@ -30,7 +30,8 @@
     <setting file="file://$PROJECT_DIR$/Infrastructure.Data/Repositories/PetRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/PetContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure.Data/FakeDB.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core.Entity/Filter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/DomainServices/Filtering/Filter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/DomainServices/Filtering/FilteringList.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/OwnerRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DomainServices/IPetRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/PetRepository.cs" root0="FORCE_HIGHLIGHTING" />
@@ -55,20 +56,21 @@
         <option value="$PROJECT_DIR$/Core.Entity/Owner.cs" />
         <option value="$PROJECT_DIR$/Core.Entity/PetTypes.cs" />
         <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Startup.cs" />
-        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/PetContext.cs" />
         <option value="$PROJECT_DIR$/Core.Entity/Filter.cs" />
-        <option value="$PROJECT_DIR$/Core/ApplicationServices/IOwnerService.cs" />
+        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/DBInitializer.cs" />
+        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/DTO/PetDTO.cs" />
+        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/PetContext.cs" />
         <option value="$PROJECT_DIR$/Core/ApplicationServices/IPetService.cs" />
-        <option value="$PROJECT_DIR$/Core/ApplicationServices/Impl/OwnerService.cs" />
-        <option value="$PROJECT_DIR$/Core/DomainServices/IOwnerRepository.cs" />
         <option value="$PROJECT_DIR$/Core/ApplicationServices/Impl/PetService.cs" />
         <option value="$PROJECT_DIR$/Core/DomainServices/IPetRepository.cs" />
-        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/DBInitializer.cs" />
-        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Controllers/OwnersController.cs" />
         <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/PetRepository.cs" />
-        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/OwnerRepository.cs" />
-        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/DTO/PetDTO.cs" />
         <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Controllers/PetsController.cs" />
+        <option value="$PROJECT_DIR$/Core/DomainServices/Filtering/FilteringList.cs" />
+        <option value="$PROJECT_DIR$/Core/ApplicationServices/IOwnerService.cs" />
+        <option value="$PROJECT_DIR$/Core/DomainServices/IOwnerRepository.cs" />
+        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/OwnerRepository.cs" />
+        <option value="$PROJECT_DIR$/Core/ApplicationServices/Impl/OwnerService.cs" />
+        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Controllers/OwnersController.cs" />
       </list>
     </option>
   </component>
@@ -214,7 +216,7 @@
       <workItem from="1569319395513" duration="6530000" />
       <workItem from="1569326709147" duration="99000" />
       <workItem from="1569327341964" duration="613000" />
-      <workItem from="1569395195488" duration="1164000" />
+      <workItem from="1569395195488" duration="4930000" />
     </task>
     <servers />
   </component>
