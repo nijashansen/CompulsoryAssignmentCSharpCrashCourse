@@ -30,6 +30,7 @@
     <setting file="file://$PROJECT_DIR$/Infrastructure.Data/Repositories/PetRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/PetContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure.Data/FakeDB.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core.Entity/Filter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/OwnerRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/DomainServices/IPetRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/PetRepository.cs" root0="FORCE_HIGHLIGHTING" />
@@ -50,22 +51,24 @@
         <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Properties/launchSettings.json" />
         <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Data/DbInitializer.cs" />
         <option value="$PROJECT_DIR$/Core.Entity/PetOwner.cs" />
-        <option value="$PROJECT_DIR$/Core/DomainServices/IOwnerRepository.cs" />
-        <option value="$PROJECT_DIR$/Core/ApplicationServices/IPetService.cs" />
-        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/OwnerRepository.cs" />
-        <option value="$PROJECT_DIR$/Core/DomainServices/IPetRepository.cs" />
         <option value="$PROJECT_DIR$/Core.Entity/Pet.cs" />
-        <option value="$PROJECT_DIR$/Core/ApplicationServices/Impl/PetService.cs" />
-        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/PetRepository.cs" />
         <option value="$PROJECT_DIR$/Core.Entity/Owner.cs" />
-        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Controllers/OwnersController.cs" />
-        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Controllers/PetsController.cs" />
-        <option value="$PROJECT_DIR$/Core/ApplicationServices/Impl/OwnerService.cs" />
-        <option value="$PROJECT_DIR$/Core/ApplicationServices/IOwnerService.cs" />
         <option value="$PROJECT_DIR$/Core.Entity/PetTypes.cs" />
-        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/DBInitializer.cs" />
-        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/PetContext.cs" />
         <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Startup.cs" />
+        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/PetContext.cs" />
+        <option value="$PROJECT_DIR$/Core.Entity/Filter.cs" />
+        <option value="$PROJECT_DIR$/Core/ApplicationServices/IOwnerService.cs" />
+        <option value="$PROJECT_DIR$/Core/ApplicationServices/IPetService.cs" />
+        <option value="$PROJECT_DIR$/Core/ApplicationServices/Impl/OwnerService.cs" />
+        <option value="$PROJECT_DIR$/Core/DomainServices/IOwnerRepository.cs" />
+        <option value="$PROJECT_DIR$/Core/ApplicationServices/Impl/PetService.cs" />
+        <option value="$PROJECT_DIR$/Core/DomainServices/IPetRepository.cs" />
+        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/DBInitializer.cs" />
+        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Controllers/OwnersController.cs" />
+        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/PetRepository.cs" />
+        <option value="$PROJECT_DIR$/PetShop.Infrastructure.SQL/Repositories/OwnerRepository.cs" />
+        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/DTO/PetDTO.cs" />
+        <option value="$PROJECT_DIR$/PetShop.UI.restAPI/Controllers/PetsController.cs" />
       </list>
     </option>
   </component>
@@ -208,12 +211,30 @@
       <workItem from="1568788823049" duration="2892000" />
       <workItem from="1568792231801" duration="5875000" />
       <workItem from="1568873737344" duration="3169000" />
-      <workItem from="1569319395513" duration="1245000" />
+      <workItem from="1569319395513" duration="6530000" />
+      <workItem from="1569326709147" duration="99000" />
+      <workItem from="1569327341964" duration="613000" />
+      <workItem from="1569395195488" duration="1164000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UnitTestsCoverage.Settings">
+    <option name="coveragePercentColumnWidth" value="150" />
+    <option name="sortOrder" value="DESCENDING" />
+    <option name="sortedColumn" value="1" />
+    <option name="symbolColumnWidth" value="75" />
+    <coverage-tree-state>
+      <expand>
+        <path>
+          <item name="rootNode" type="c53c71d1:RiderDotCoverCoverageTreeModel$RootNode" />
+          <item name="1" type="8b8fad3a:RiderDotCoverCoverageTreeNode" />
+        </path>
+      </expand>
+      <select />
+    </coverage-tree-state>
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />

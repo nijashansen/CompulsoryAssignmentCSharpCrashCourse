@@ -10,7 +10,9 @@ namespace Core.ApplicationServices
         Owner CreateOwner(Owner owner);
         Owner DeleteOwner(Owner owner);
         Owner GetOwner(int id);
+        List<Owner> GetFilteredOwners(Filter filter);
         List<Owner> GetAllOwners();
         Owner UpdateOwner(Owner toBeUpdated, Owner updatedOwner);
+        
     }
 }

@@ -37,17 +37,34 @@ namespace PetShop.Infrastructure.SQL.Repositories
                 .FirstOrDefault(o => o.id == id);
         }
 
-        public IEnumerable<Owner> ReadOwners()
+        public IEnumerable<Owner> ReadOwners(Filter filter)
         {
-            return _context.Owners.
-                Include(o => o.petHistory)
+            if (filter == null)
+            {
+                return _context.Owners.
+                                Include(o => o.petHistory)
+                                .ThenInclude(po => po.Pet).ToList();
+            }
+
+            return _context.Owners.Include(o => o.petHistory)
                 .ThenInclude(po => po.Pet)
-                .ToList();
+                .Skip((filter.CurrentPage - 1) * filter.InfoPrPage)
+                .Take(filter.InfoPrPage).ToList();
         }
 
         public Owner UpdateOwner(Owner toBeUpdated, Owner updatedOwner)
         {
-            throw new NotImplementedException();
+            _context.Attach(toBeUpdated).State = EntityState.Modified;
+            _context.Entry(toBeUpdated).Reference(o => o.petHistory).IsModified = true;
+            _context.SaveChanges();
+
+            updatedOwner = toBeUpdated;
+            return updatedOwner;
+        }
+
+        public int Count()
+        {
+            return _context.Owners.Count();
         }
     }
 }

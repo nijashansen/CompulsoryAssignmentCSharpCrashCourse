@@ -9,8 +9,9 @@ namespace Core.DomainServices
     {
         Owner AddOwner(Owner owner);
         Owner DeleteOwner(Owner owner);
-        IEnumerable<Owner> ReadOwners();
+        IEnumerable<Owner> ReadOwners(Filter filter = null);
         Owner ReadOwner(int id);
         Owner UpdateOwner(Owner toBeUpdated, Owner updatedOwner);
+        int Count();
     }
 }

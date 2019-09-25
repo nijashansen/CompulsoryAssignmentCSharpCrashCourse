@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using Core.DomainServices;
@@ -44,6 +45,21 @@ namespace Core.ApplicationServices.Impl
                 }
             }
             return fiveCheapestPets;
+        }
+
+        public List<Pet> GetFilteredPets(Filter filter)
+        {
+            if (filter.CurrentPage < 0 || filter.InfoPrPage < 0)
+            {
+                throw new InvalidDataException("CurrentPage and InfoPrPage Must Zero or More");
+            }
+
+            if ((filter.CurrentPage - 1 * filter.InfoPrPage) >= _petRepo.Count())
+            {
+                throw new InvalidDataException("Index Out Of Bounds, CurrentPage is to high");
+            }
+            
+            return _petRepo.ReadPets(filter).ToList();
         }
 
         public Pet GetPet(int id)

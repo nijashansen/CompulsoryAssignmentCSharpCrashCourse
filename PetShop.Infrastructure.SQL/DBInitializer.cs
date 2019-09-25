@@ -28,6 +28,16 @@ namespace PetShop.Infrastructure.SQL
                 price = 550,
                 ownersHistory = new List<PetOwner>()
             };
+            Pet pet3 = new Pet
+            {
+                name = "Snoopy",
+                type = PetTypes.Dog,
+                birthDate = DateTime.Now.AddYears(-35),
+                soldDate = DateTime.Now.AddYears(1).AddDays(24),
+                color = "White",
+                price = 550,
+                ownersHistory = new List<PetOwner>()
+            };
             Owner owner1 = new Owner
             {
                 firstName = "Post",
@@ -42,11 +52,19 @@ namespace PetShop.Infrastructure.SQL
                 address = "Elektronik Musikvej 1337",
                 petHistory = new List<PetOwner>()
             };
+            Owner owner3 = new Owner
+            {
+                firstName = "Chris",
+                lastName = "McDonnel",
+                address = "Tomatvej 40",
+                petHistory = new List<PetOwner>()
+            };
 
 
 
             owner1 = ctx.Owners.Add(owner1).Entity;
             owner2 = ctx.Owners.Add(owner2).Entity;
+            owner3 = ctx.Owners.Add(owner3).Entity;
 
             PetOwner PetOwner1 = new PetOwner
             {
@@ -62,13 +80,20 @@ namespace PetShop.Infrastructure.SQL
             {
                 Owner = owner1
             };
+            
+            PetOwner PetOwner4 = new PetOwner
+            {
+                Owner = owner3
+            };
 
             pet1.ownersHistory.Add(PetOwner1);
             pet1.ownersHistory.Add(PetOwner2);
             pet2.ownersHistory.Add(PetOwner3);
+            pet3.ownersHistory.Add(PetOwner4);
 
             pet1 = ctx.Pets.Add(pet1).Entity;
-            pet1 = ctx.Pets.Add(pet2).Entity;
+            pet2 = ctx.Pets.Add(pet2).Entity;
+            pet3 = ctx.Pets.Add(pet3).Entity;
 
 
 

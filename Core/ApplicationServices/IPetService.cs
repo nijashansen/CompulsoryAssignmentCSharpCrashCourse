@@ -15,6 +15,7 @@ namespace Core.ApplicationServices
         List<Pet> GetPetsByType(PetTypes type);
         List<Pet> GetPetsByOrderedPrice();
         List<Pet> GetFiveCheapestPets();
+        List<Pet> GetFilteredPets(Filter filter);
         
     }
 }

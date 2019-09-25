@@ -22,9 +22,21 @@ namespace PetShop.UI.restAPI.Controllers
 
         // GET api/pet
         [HttpGet]
-        public ActionResult<IEnumerable<Owner>> Get()
+        public ActionResult<IEnumerable<Owner>> Get([FromQuery] Filter filter)
         {
-            return _ownerService.GetAllOwners();
+            try
+            {
+                if (filter.CurrentPage == 0 && filter.InfoPrPage == 0)
+                {
+                    return Ok(_ownerService.GetAllOwners());
+                }
+                return Ok(_ownerService.GetFilteredOwners(filter));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+            
         }
 
         // GET api/pet/5
