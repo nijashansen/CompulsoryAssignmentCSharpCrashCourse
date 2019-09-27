@@ -11,9 +11,8 @@ namespace Core.ApplicationServices
         Pet CreatePet(Pet pet);
         Pet DeletePet(int id);
         Pet UpdatePet(Pet petToUpdate);
-        List<Pet> GetPets();
         Pet GetPet(int id);
-        List<Pet> GetFilteredPets(Filter filter);
+        FilteringList<Pet> GetPets(Filter filter);
         
     }
 }

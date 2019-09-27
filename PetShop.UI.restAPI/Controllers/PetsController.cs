@@ -22,25 +22,48 @@ namespace PetShop.UI.restAPI.Controllers
 
         // GET api/Pets
         [HttpGet]
-        public ActionResult<IEnumerable<Pet>> Get([FromQuery] Filter filter)
+        public ActionResult<FilteringList<Pet>> Get([FromQuery] Filter filter)
         {
             try
             {
-                if (filter.CurrentPage == 0 && filter.InfoPrPage == 0)
+                if(filter.CurrentPage == 0 && filter.InfoPrPage == 0)
                 {
-                    return Ok(_petService.GetPets());
+                    var list = _petService.GetPets(null);
+                    var newList = new List<Pet>();
+                    foreach (var pet in list.List)
+                    {
+                        newList.Add(new Pet()
+                        {
+                            id = pet.id,
+                            name = pet.name,
+                            type = pet.type,
+                            birthDate = pet.birthDate,
+                            soldDate = pet.soldDate,
+                            color = pet.color,
+                            price = pet.price,
+                            ownersHistory = pet.ownersHistory
+                        }) ;
+                    }
+                    var newFilteredList = new FilteringList<Pet>();
+                    newFilteredList.List = newList;
+                    newFilteredList.Count = list.Count;
+                    return Ok(newFilteredList);
                 }
-                return Ok(_petService.GetFilteredPets(filter));
+
+                var fl = _petService.GetPets(filter);
+
+                return Ok(fl);
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);
+                return StatusCode(500, e.Message);
             }
         }
 
         [HttpGet("{id}")]
         public ActionResult<Pet> Get(int id)
         {
+            if (id < 1) return BadRequest("Id must be greater than 1");
             return Ok(_petService.GetPet(id));
         }
 

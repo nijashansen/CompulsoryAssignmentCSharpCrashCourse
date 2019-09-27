@@ -17,9 +17,14 @@ namespace PetShop.Infrastructure.SQL.Repositories
         }
         public Pet CreatePet(Pet pet)
         {
-            _context.Attach(pet).State = EntityState.Added;
+            if(pet != null)
+            {
+                _context.Attach(pet).State = EntityState.Added;
+                _context.Entry(pet).Collection(p => p.ownersHistory).IsModified = true;
+            }
+            var petSaved = _context.Pets.Add(pet).Entity;
             _context.SaveChanges();
-            return pet;
+            return petSaved;
         }
 
         public Pet DeletePet(int id)
@@ -49,18 +54,26 @@ namespace PetShop.Infrastructure.SQL.Repositories
             return _context.Pets.Count();
         }
 
-        public IEnumerable<Pet> ReadPets(Filter filter)
+        public FilteringList<Pet> ReadPets(Filter filter)
         {
-            if (filter == null)
-            {
-                return _context.Pets.Include(p => p.ownersHistory)
-                    .ThenInclude(po => po.Pet).ToList();
-            }
+            var filteredList = new FilteringList<Pet>();
 
-            return _context.Pets.Include(p => p.ownersHistory)
-                .ThenInclude(po => po.Pet)
-                .Skip((filter.CurrentPage - 1) * filter.InfoPrPage)
-                .Take(filter.InfoPrPage).ToList();
+            if (filter != null && filter.CurrentPage > 0 && filter.InfoPrPage > 0)
+            {
+                filteredList.List = _context.Pets
+                    .Skip((filter.CurrentPage - 1) * filter.InfoPrPage)
+                    .Take(filter.InfoPrPage)
+                    .OrderBy(o => o.id)
+                    .Include(p => p.ownersHistory)
+                    .ThenInclude(po => po.Owner)
+                    .ToList();
+                return filteredList;
+            }
+            filteredList.List = _context.Pets
+                .Include(p => p.ownersHistory)
+                .ThenInclude(po => po.Owner);
+            filteredList.Count = filteredList.List.Count();
+            return filteredList;
         }
 
         public Pet UpdatePet(Pet petToUpdate)

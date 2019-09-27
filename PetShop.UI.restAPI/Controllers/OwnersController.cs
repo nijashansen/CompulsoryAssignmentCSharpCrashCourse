@@ -22,7 +22,7 @@ namespace PetShop.UI.restAPI.Controllers
 
         // GET api/pet
         [HttpGet]
-        public ActionResult<IEnumerable<Owner>> Get([FromQuery] Filter filter)
+        public ActionResult<FilteringList<Owner>> Get([FromQuery] Filter filter)
         {
             try
             {
@@ -63,6 +63,7 @@ namespace PetShop.UI.restAPI.Controllers
         [HttpGet("{id}")]
         public ActionResult<Owner> Get(int id)
         {
+            if (id < 1) return BadRequest("Id must be greater than 1");
             return _ownerService.GetOwner(id);
         }
 
